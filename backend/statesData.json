@@ -1,0 +1,1893 @@
+[
+  {
+    "name": "Tamil Nadu",
+    "capital": "Chennai",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Ancient Dravidian temples, classical Bharatanatyam dance, scenic hill stations, and coastal heritage monuments.",
+    "topCategories": ["Heritage", "Religious", "Nature", "Beaches"],
+    "mustVisitDestinations": ["Madurai Meenakshi Temple", "Ooty Hill Station", "Mahabalipuram Shore Temples", "Kanyakumari Sunset Point", "Kodaikanal Lake"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,500/day",
+      "midRange": "₹3,500 - ₹6,000/day",
+      "luxury": "₹12,000+/day"
+    },
+    "travelStyleTags": ["Family Friendly", "Photography", "Pilgrimage", "Solo Travel"],
+    "bannerImage": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Temples, Hill stations, Marina Beach",
+    "facts": [
+      "Capital city: Chennai, home to the second longest beach in the world.",
+      "Famous for Dravidian architecture with monumental gateway towers called Gopurams.",
+      "Home to the Nilgiri Mountain Railway, a UNESCO World Heritage site."
+    ],
+    "weatherOverview": "Tropical climate with hot and humid summers. The East Coast experiences monsoon rainfall between October and December.",
+    "bestTravelSeason": "Winter (October to March) is the best travel season with pleasant, breezy weather.",
+    "whyVisit": "To explore thousands of years of living classical culture, magnificent stone-carved temples, tranquil hill stations, and pristine coastlines.",
+    "topExperiences": [
+      "Witnessing the grand evening prayers at Madurai Meenakshi Temple.",
+      "Riding the Nilgiri Mountain Railway toy train through pine forests in Ooty.",
+      "Watching the sunset and moonrise simultaneously over the three seas in Kanyakumari."
+    ],
+    "foodSpecialties": ["Masala Dosa", "Filter Coffee", "Idli Sambar", "Chettinad Chicken", "Pongal"],
+    "travelTips": [
+      "Dress modestly when visiting temples; shoulders and knees must be covered.",
+      "Book the Nilgiri toy train tickets online weeks in advance.",
+      "Carry light cotton clothing and stay hydrated during temple walks."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Heritage & Hills Tour",
+        "dayByDay": [
+          "Day 1: Arrive in Chennai, visit Marina Beach and Kapaleeshwarar Temple.",
+          "Day 2: Travel to Mahabalipuram, explore shore temples and rock-cut carvings.",
+          "Day 3: Head to Madurai, witness Meenakshi Amman Temple and its grand corridors.",
+          "Day 4: Drive up to Ooty, relax in the cool mountain breeze and lake gardens.",
+          "Day 5: Visit Doddabetta Peak and tea estates in Ooty before departure."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Madurai", "lat": 9.9252, "lng": 78.1198 },
+      { "name": "Ooty", "lat": 11.4102, "lng": 76.6950 },
+      { "name": "Chennai", "lat": 13.0827, "lng": 80.2707 }
+    ]
+  },
+  {
+    "name": "Kerala",
+    "capital": "Thiruvananthapuram",
+    "bestTimeToVisit": "September to March",
+    "famousFor": "Serene backwaters, luxurious houseboat cruises, lush spice and tea plantations, and authentic Ayurvedic wellness retreats.",
+    "topCategories": ["Nature", "Beaches", "Wildlife", "Cultural"],
+    "mustVisitDestinations": ["Munnar Tea Estates", "Alleppey Houseboats", "Varkala Cliff Beach", "Wayanad Hills", "Thekkady Wildlife Sanctuary"],
+    "estimatedBudget": {
+      "budget": "₹1,500 - ₹2,800/day",
+      "midRange": "₹4,000 - ₹7,500/day",
+      "luxury": "₹15,000+/day"
+    },
+    "travelStyleTags": ["Honeymoon", "Family Friendly", "Solo Travel", "Adventure"],
+    "bannerImage": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Backwaters, Ayurveda, Hill stations",
+    "facts": [
+      "Known globally as 'God's Own Country' due to its lush tropical landscapes.",
+      "Has the highest literacy rate and highest life expectancy in India.",
+      "Home to Kathakali, a highly stylized classical dance-drama."
+    ],
+    "weatherOverview": "Tropical wet climate with heavy monsoon rainfall from June to September, followed by a warm winter.",
+    "bestTravelSeason": "Winter (October to February) is cool and perfect for sightseeing; monsoon is ideal for wellness treatments.",
+    "whyVisit": "Kerala is a perfect escape for travelers seeking tranquility, natural rejuvenation, serene waterways, and traditional performing arts.",
+    "topExperiences": [
+      "Staying overnight in a traditional wooden Kettuvallam houseboat in Alleppey.",
+      "Walking through the misty, emerald tea gardens in Munnar.",
+      "Rejuvenating with a week-long professional Ayurvedic massage at a beachside wellness resort."
+    ],
+    "foodSpecialties": ["Appam with Stew", "Karimeen Pollichathu", "Malabar Parotta", "Kerala Sadya", "Banana Chips"],
+    "travelTips": [
+      "Always check the government license of houseboats before booking.",
+      "Carry mosquito repellent, especially when staying near water bodies.",
+      "Book spice tour guides in advance in Thekkady."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "6 Days",
+        "title": "Classic Kerala Backwaters & Hills",
+        "dayByDay": [
+          "Day 1: Arrive in Kochi, explore colonial Fort Kochi and Chinese fishing nets.",
+          "Day 2: Drive to Munnar, view waterfalls and visit tea gardens.",
+          "Day 3: Sightseeing in Munnar, visit Eravikulam National Park.",
+          "Day 4: Drive to Alleppey, check in to a luxury backwater houseboat.",
+          "Day 5: Drive to Varkala Beach, enjoy sunset over the red cliffs.",
+          "Day 6: Depart from Thiruvananthapuram Airport."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Munnar", "lat": 10.0889, "lng": 77.0595 },
+      { "name": "Alleppey", "lat": 9.4981, "lng": 76.3388 },
+      { "name": "Varkala", "lat": 8.7300, "lng": 76.7100 }
+    ]
+  },
+  {
+    "name": "Karnataka",
+    "capital": "Bengaluru",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Royal palaces of Mysore, ancient ruins of Hampi, lush coffee plantations of Coorg, and modern tech hubs.",
+    "topCategories": ["Heritage", "Nature", "Religious", "Wildlife"],
+    "mustVisitDestinations": ["Mysore Palace", "Hampi Ruins", "Coorg Valleys", "Gokarna Beaches", "Bandipur Tiger Reserve"],
+    "estimatedBudget": {
+      "budget": "₹1,300 - ₹2,500/day",
+      "midRange": "₹3,800 - ₹7,000/day",
+      "luxury": "₹13,500+/day"
+    },
+    "travelStyleTags": ["Family Friendly", "Heritage", "Adventure", "Solo Travel"],
+    "bannerImage": "https://images.unsplash.com/photo-1600100397990-24b910e527fc?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Palaces, Hampi ruins, Coorg tea gardens",
+    "facts": [
+      "Capital Bengaluru is known as the Silicon Valley of India.",
+      "Hampi is the architectural epicentre of the historical Vijayanagara Empire.",
+      "Home to the second tallest monolithic statue of Lord Shiva in Gokarna/Murudeshwar."
+    ],
+    "weatherOverview": "Semi-arid and tropical climate, cool in the Western Ghats region and hot in the northern plains.",
+    "bestTravelSeason": "Winter (October to March) is ideal for exploring heritage monuments and national parks.",
+    "whyVisit": "To experience a diverse mix of royal luxury, historic ruins, misty coffee highlands, and clean, uncrowded beaches.",
+    "topExperiences": [
+      "Exploring the glowing, illuminated Mysore Palace on a Sunday evening.",
+      "Bicycling through the giant stone boulders and ruins of Hampi.",
+      "Trekking through coffee plantations and waterfalls in Coorg."
+    ],
+    "foodSpecialties": ["Bisi Bele Bath", "Mysore Pak", "Neer Dosa", "Dharwad Pedha", "Ragi Mudde"],
+    "travelTips": [
+      "Rent an electric cart or bicycle to explore Hampi efficiently.",
+      "Carry light winter wear when visiting hill stations like Coorg.",
+      "Try local coastal seafood when traveling near Gokarna."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "6 Days",
+        "title": "Royal Karnataka & Coffee Hills",
+        "dayByDay": [
+          "Day 1: Arrive in Bengaluru, explore Lalbagh Gardens and Palace.",
+          "Day 2: Drive to Mysuru, tour Mysore Palace and Chamundi Hills.",
+          "Day 3: Travel to Coorg, walk through spice and coffee plantations.",
+          "Day 4: Sightseeing in Coorg, visit Abbey Falls and Golden Temple Bylakuppe.",
+          "Day 5: Drive to Hampi, enjoy sunset view from Hemakuta Hill.",
+          "Day 6: Tour Hampi Stone Chariot and Virupaksha Temple, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Mysuru", "lat": 12.2958, "lng": 76.6394 },
+      { "name": "Hampi", "lat": 15.3350, "lng": 76.4600 },
+      { "name": "Bengaluru", "lat": 12.9716, "lng": 77.5946 }
+    ]
+  },
+  {
+    "name": "Maharashtra",
+    "capital": "Mumbai",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Bustling cityscape of Mumbai, Ajanta & Ellora caves, Western Ghats hill stations, and rich Maratha heritage.",
+    "topCategories": ["Heritage", "Nature", "Beaches", "Religious"],
+    "mustVisitDestinations": ["Gateway of India", "Ajanta & Ellora Caves", "Lonavala & Khandala", "Mahabaleshwar", "Shirdi Temple"],
+    "estimatedBudget": {
+      "budget": "₹1,400 - ₹2,800/day",
+      "midRange": "₹4,000 - ₹8,000/day",
+      "luxury": "₹16,000+/day"
+    },
+    "travelStyleTags": ["Solo Travel", "Family Friendly", "Adventure", "Photography"],
+    "bannerImage": "https://images.unsplash.com/photo-1562973831-2d378b66355c?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Gateway of India, Ajanta Caves, Lonavala",
+    "facts": [
+      "Mumbai is India's financial capital and the home of Bollywood.",
+      "The Ajanta Caves contain ancient rock-cut Buddhist paintings dating to the 2nd century BC.",
+      "Maharashtra has the largest network of forts built during Chhatrapati Shivaji's rule."
+    ],
+    "weatherOverview": "Tropical climate with highly humid coastal weather. Heaviest rains fall during the monsoon (June to September).",
+    "bestTravelSeason": "Winter (October to February) is cool and pleasant for sightseeing in cities and hiking.",
+    "whyVisit": "To witness the energy of Mumbai, marvel at ancient rock architecture, and relax in mist-laden hill stations.",
+    "topExperiences": [
+      "Taking an evening walk along Marine Drive (Queen's Necklace) in Mumbai.",
+      "Gazing at the massive monolithic Kailash Temple in Ellora Caves.",
+      "Trekking to historical forts like Sinhagad during the green monsoon season."
+    ],
+    "foodSpecialties": ["Vada Pav", "Pav Bhaji", "Puran Poli", "Misal Pav", "Shrikhand"],
+    "travelTips": [
+      "Use local trains and metro to beat Mumbai traffic during rush hours.",
+      "Hire local guides at Ajanta and Ellora to understand historical sculptures.",
+      "Wear good hiking boots if planning monsoon treks in Lonavala."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Mumbai & Heritage Caves",
+        "dayByDay": [
+          "Day 1: Arrive in Mumbai, explore Gateway of India and Colaba Causeway.",
+          "Day 2: Visit Marine Drive, Elephanta Caves by ferry, and Haji Ali Dargah.",
+          "Day 3: Travel to Pune, enjoy local Maratha heritage museums.",
+          "Day 4: Drive to Aurangabad, explore the magnificent Ellora Caves.",
+          "Day 5: Tour the Ajanta Caves, marvel at ancient fresco paintings and depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Mumbai", "lat": 18.9220, "lng": 72.8347 },
+      { "name": "Pune", "lat": 18.5204, "lng": 73.8567 },
+      { "name": "Lonavala", "lat": 18.7500, "lng": 73.4000 }
+    ]
+  },
+  {
+    "name": "Uttar Pradesh",
+    "capital": "Lucknow",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "The legendary Taj Mahal, the ancient spiritual ghats of Varanasi, and delicious Awadhi royal cuisine.",
+    "topCategories": ["Heritage", "Religious", "Cultural"],
+    "mustVisitDestinations": ["Taj Mahal (Agra)", "Varanasi Ghats", "Lucknow Imambaras", "Mathura Temple", "Fatehpur Sikri"],
+    "estimatedBudget": {
+      "budget": "₹1,000 - ₹2,000/day",
+      "midRange": "₹3,000 - ₹5,500/day",
+      "luxury": "₹11,000+/day"
+    },
+    "travelStyleTags": ["Pilgrimage", "Heritage", "Photography", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1564507592208-0275414643c1?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Taj Mahal, Varanasi Ghats, Mughal Heritage",
+    "facts": [
+      "Varanasi is widely considered one of the oldest continuously inhabited cities in the world.",
+      "The Taj Mahal is one of the Seven Wonders of the World, constructed out of pure white Makrana marble.",
+      "Hosts the Kumbh Mela, the largest spiritual human gathering in the world."
+    ],
+    "weatherOverview": "Extreme climate with hot, dry summers and chilly winters. Dense fog can occur in December and January.",
+    "bestTravelSeason": "Winter (October to March) is cool, making it ideal for walking tours and river cruises.",
+    "whyVisit": "To connect with spiritual India, admire stunning Islamic and Hindu monument architecture, and taste royal Mughlai food.",
+    "topExperiences": [
+      "Watching the sunrise reflecting on the Taj Mahal's marble facade.",
+      "Taking an evening boat ride along the Ganges in Varanasi to witness Ganga Aarti.",
+      "Exploring the labyrinth (Bhool Bhulaiya) inside Lucknow's Bara Imambara."
+    ],
+    "foodSpecialties": ["Tunday Kababi", "Agra Petha", "Banarasi Paan", "Kachori Sabzi", "Malaiyo"],
+    "travelTips": [
+      "Buy Taj Mahal tickets online in advance to bypass long ticket queues.",
+      "Be wary of aggressive local priests and guides in Varanasi ghats.",
+      "Carry warm layers if visiting during December or January."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Golden Triangle & Spiritual Ganges",
+        "dayByDay": [
+          "Day 1: Arrive in Agra, visit the magnificent Taj Mahal and Agra Fort.",
+          "Day 2: Visit Fatehpur Sikri, travel to Lucknow, experience Awadhi dinner.",
+          "Day 3: Tour Bara Imambara and British Residency in Lucknow.",
+          "Day 4: Take morning train to Varanasi, attend the grand evening Ganga Aarti.",
+          "Day 5: Sunrise boat ride on Ganges, visit Sarnath Buddhist ruins, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Agra", "lat": 27.1767, "lng": 78.0081 },
+      { "name": "Lucknow", "lat": 26.8467, "lng": 80.9462 },
+      { "name": "Varanasi", "lat": 25.3176, "lng": 82.9739 }
+    ]
+  },
+  {
+    "name": "Delhi",
+    "capital": "New Delhi",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Centuries-old historic monuments, diverse street food joints, shopping bazaars, and modern parliament buildings.",
+    "topCategories": ["Heritage", "Cultural", "Religious"],
+    "mustVisitDestinations": ["Qutub Minar", "Red Fort", "India Gate", "Lotus Temple", "Humayun's Tomb"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,500/day",
+      "midRange": "₹3,500 - ₹7,000/day",
+      "luxury": "₹14,000+/day"
+    },
+    "travelStyleTags": ["Family Friendly", "Solo Travel", "Heritage", "Photography"],
+    "bannerImage": "https://images.unsplash.com/photo-1587922546307-776227941871?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Red Fort, Qutub Minar, India Gate",
+    "facts": [
+      "Delhi has been the capital city of multiple dynasties, including the Mughals and the British.",
+      "Home to Khari Baoli, Asia's largest wholesale spice market.",
+      "The Lotus Temple is a Bahai House of Worship shaped like a blooming flower, open to all faiths."
+    ],
+    "weatherOverview": "Extreme weather with intense summer heat (up to 45°C) and cold, foggy winters (down to 5°C).",
+    "bestTravelSeason": "Winter (October to March) is delightful, with cool afternoons and chilly evenings.",
+    "whyVisit": "To experience the contrast between the narrow chaotic lanes of Old Delhi and the wide tree-lined avenues of New Delhi.",
+    "topExperiences": [
+      "Taking a cycle rickshaw ride through the narrow lanes of Chandni Chowk.",
+      "Standing under the massive war memorial arch of India Gate at night.",
+      "Gazing at the Persian-style dome architecture of Humayun's Tomb."
+    ],
+    "foodSpecialties": ["Chole Bhature", "Butter Chicken", "Golgappa", "Dahi Bhalla", "Paranthas"],
+    "travelTips": [
+      "Use the Delhi Metro; it is clean, fast, and covers the entire city.",
+      "Be prepared to haggle extensively when shopping in Sarojini Nagar or Janpath.",
+      "Dress warmly for outdoor monuments in December and January."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "3 Days",
+        "title": "Delhi Explorer",
+        "dayByDay": [
+          "Day 1: Visit Red Fort, Jama Masjid, and enjoy street food in Chandni Chowk.",
+          "Day 2: Visit India Gate, Rashtrapati Bhavan, and Humayun's Tomb.",
+          "Day 3: Explore Qutub Minar, Lotus Temple, and shop at Dilli Haat before departing."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "New Delhi", "lat": 28.6139, "lng": 77.2090 },
+      { "name": "Old Delhi", "lat": 28.6560, "lng": 77.2300 },
+      { "name": "Dwarka", "lat": 28.5800, "lng": 77.0100 }
+    ]
+  },
+  {
+    "name": "Punjab",
+    "capital": "Chandigarh",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "The beautiful Golden Temple, patriotic Wagah Border ceremony, lush mustard fields, and rich buttery cuisine.",
+    "topCategories": ["Religious", "Cultural", "Heritage"],
+    "mustVisitDestinations": ["Golden Temple", "Jallianwala Bagh", "Wagah Border", "Sheesh Mahal Patiala", "Rock Garden"],
+    "estimatedBudget": {
+      "budget": "₹1,100 - ₹2,200/day",
+      "midRange": "₹3,200 - ₹6,000/day",
+      "luxury": "₹12,000+/day"
+    },
+    "travelStyleTags": ["Pilgrimage", "Family Friendly", "Photography", "Solo Travel"],
+    "bannerImage": "https://images.unsplash.com/photo-1514222047394-411db1ec23be?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Golden Temple, Wagah Border, Rich Food",
+    "facts": [
+      "The name Punjab translates to 'Land of Five Rivers'.",
+      "The Golden Temple Langar serves hot vegetarian meals to over 100,000 people daily.",
+      "Punjab is the birthplace and spiritual home of the Sikh faith."
+    ],
+    "weatherOverview": "Hot and dry summers, followed by a short monsoon, and a cold winter with clear blue skies.",
+    "bestTravelSeason": "Winter (October to March) is cool, fresh, and perfect for walking and harvesting season.",
+    "whyVisit": "To experience unmatched hospitality, spiritual calmness at the Golden Temple, and high-energy culture.",
+    "topExperiences": [
+      "Sitting by the peaceful waters of the Amrit Sarovar pond at the Golden Temple.",
+      "Cheering at the high-stepping border guarding ceremony at Wagah Border.",
+      "Visiting Jallianwala Bagh memorial to pay respects to freedom fighters."
+    ],
+    "foodSpecialties": ["Sarson ka Saag & Makki di Roti", "Butter Chicken", "Amritsari Kulcha", "Tandoori Chicken", "Sweet Lassi"],
+    "travelTips": [
+      "Cover your head with a scarf and wash your feet before entering the Golden Temple complex.",
+      "Arrive at the Wagah Border by 3:00 PM to secure good seats in the stands.",
+      "Try the Langar food; it is delicious and served with pure devotion."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "3 Days",
+        "title": "Amritsar Heritage Tour",
+        "dayByDay": [
+          "Day 1: Arrive in Amritsar, visit the Golden Temple at night when it glows.",
+          "Day 2: Morning visit to Jallianwala Bagh, afternoon trip to Wagah Border.",
+          "Day 3: Explore partition museum, try local kulcha joints, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Amritsar", "lat": 31.6340, "lng": 74.8723 },
+      { "name": "Ludhiana", "lat": 30.9010, "lng": 75.8573 },
+      { "name": "Jalandhar", "lat": 31.3260, "lng": 75.5762 }
+    ]
+  },
+  {
+    "name": "Puducherry",
+    "capital": "Puducherry",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Yellow-walled French colonial architecture, spiritual town of Auroville, sandy beaches, and quiet cafes.",
+    "topCategories": ["Beaches", "Cultural", "Nature"],
+    "mustVisitDestinations": ["French Quarter", "Auroville Matrimandir", "Promenade Beach", "Paradise Beach", "Sri Aurobindo Ashram"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,500/day",
+      "midRange": "₹3,500 - ₹6,500/day",
+      "luxury": "₹13,000+/day"
+    },
+    "travelStyleTags": ["Solo Travel", "Honeymoon", "Photography", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "French Quarter, Auroville, Beaches",
+    "facts": [
+      "Puducherry was a French colonial settlement until 1954.",
+      "Auroville is an experimental township dedicated to human unity and peace.",
+      "Popularly called the 'French Riviera of the East'."
+    ],
+    "weatherOverview": "Tropical climate with warm temperatures year-round. Monsoons arrive late between October and December.",
+    "bestTravelSeason": "Winter (October to March) is pleasant, perfect for walking and cycling around French Town.",
+    "whyVisit": "For a peaceful getaway, colonial walking tours, French pastries, and spiritual meditation.",
+    "topExperiences": [
+      "Cycling past yellow colonial villas and bougainvillea gates in the White Town.",
+      "Meditating in front of the golden spherical Matrimandir in Auroville.",
+      "Watching the sunrise over the rocks of Promenade Beach."
+    ],
+    "foodSpecialties": ["Croissant", "Crepes", "Ratatouille", "French Baguettes", "Seafood Curry"],
+    "travelTips": [
+      "Rent a scooter to travel between White Town and Auroville easily.",
+      "Obtain passes for Auroville Matrimandir viewing deck online a day early.",
+      "Be respectful of the silence guidelines inside the Sri Aurobindo Ashram."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "3 Days",
+        "title": "French Riviera & Auroville",
+        "dayByDay": [
+          "Day 1: Arrive, walk French Quarter, visit ashram and enjoy French dinner.",
+          "Day 2: Spend the day in Auroville, visit the Matrimandir, try organic cafes.",
+          "Day 3: Morning at Paradise Beach, explore street markets, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Puducherry City", "lat": 11.9416, "lng": 79.8083 },
+      { "name": "Karaikal", "lat": 10.9254, "lng": 79.8380 },
+      { "name": "Mahe", "lat": 11.7002, "lng": 75.5348 }
+    ]
+  },
+  {
+    "name": "Gujarat",
+    "capital": "Gandhinagar",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "The colossal Statue of Unity, white salt desert of Rann of Kutch, Asiatic Lions of Gir, and vibrant Navratri festivals.",
+    "topCategories": ["Heritage", "Wildlife", "Cultural", "Nature"],
+    "mustVisitDestinations": ["Statue of Unity", "Rann of Kutch", "Gir National Park", "Sabarmati Ashram", "Somnath Temple"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,400/day",
+      "midRange": "₹3,500 - ₹6,500/day",
+      "luxury": "₹12,500+/day"
+    },
+    "travelStyleTags": ["Family Friendly", "Heritage", "Wildlife", "Photography"],
+    "bannerImage": "https://images.unsplash.com/photo-1599661509660-f47c94b711e7?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Statue of Unity, Gir Forest, Rann of Kutch",
+    "facts": [
+      "The Statue of Unity is the tallest statue in the world, standing at 182 meters.",
+      "Gir National Park is the only natural habitat of the Asiatic Lion.",
+      "The Great Rann of Kutch is one of the largest salt deserts in the world."
+    ],
+    "weatherOverview": "Arid to semi-arid climate. Summers are extremely hot, while winters are mild and dry.",
+    "bestTravelSeason": "Winter (October to March) is ideal for desert safaris and spotting wildlife.",
+    "whyVisit": "To witness majestic wildlife, see world-class modern architecture, and experience rich textile crafts.",
+    "topExperiences": [
+      "Standing at the observation deck of the towering Statue of Unity.",
+      "Walking on the white salt expanse of the Rann of Kutch under a full moon.",
+      "Spotting Asiatic Lions during a morning open jeep safari in Gir Forest."
+    ],
+    "foodSpecialties": ["Dhokla", "Thepla", "Khandvi", "Gujarati Thali", "Undhiyu"],
+    "travelTips": [
+      "Gujarat is a dry state; alcohol is prohibited without a special tourist permit.",
+      "Book Gir safari tickets online only through the official government portal.",
+      "Kutch requires a permit, which can be generated online or at entry checkpoints."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "6 Days",
+        "title": "Gujarat Heritage & Wildlife",
+        "dayByDay": [
+          "Day 1: Arrive in Ahmedabad, visit Sabarmati Ashram and Adalaj Stepwell.",
+          "Day 2: Drive to Statue of Unity (Kevadia), explore the viewing gallery.",
+          "Day 3: Travel to Gir National Park, relax at the resort.",
+          "Day 4: Morning safari in Gir, drive to Somnath Temple, see evening light show.",
+          "Day 5: Drive to Dwarka, explore historic Dwarkadhish Temple.",
+          "Day 6: Return to Ahmedabad, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Kevadia", "lat": 21.8380, "lng": 73.7191 },
+      { "name": "Ahmedabad", "lat": 23.0225, "lng": 72.5714 },
+      { "name": "Surat", "lat": 21.1702, "lng": 72.8311 }
+    ]
+  },
+  {
+    "name": "Goa",
+    "capital": "Panaji",
+    "bestTimeToVisit": "November to February",
+    "famousFor": "Vibrant beach nightlife, Portuguese churches, water sports, and delicious tropical seafood.",
+    "topCategories": ["Beaches", "Heritage", "Adventure", "Nature"],
+    "mustVisitDestinations": ["Baga Beach", "Basilica of Bom Jesus", "Aguada Fort", "Dudhsagar Falls", "Anjuna Flea Market"],
+    "estimatedBudget": {
+      "budget": "₹1,500 - ₹3,000/day",
+      "midRange": "₹4,500 - ₹8,500/day",
+      "luxury": "₹18,000+/day"
+    },
+    "travelStyleTags": ["Solo Travel", "Honeymoon", "Adventure", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Beaches, Portuguese Forts, Nightlife",
+    "facts": [
+      "Smallest Indian state by area, but has the highest GDP per capita.",
+      "Basilica of Bom Jesus houses the mortal remains of St. Francis Xavier.",
+      "Was a Portuguese colony for over 450 years until annexed by India in 1961."
+    ],
+    "weatherOverview": "Tropical maritime climate, hot and humid throughout the year, with heavy monsoon rainfall from June to September.",
+    "bestTravelSeason": "Winter (November to February) is cool, lively, and has the best beach parties and watersports.",
+    "whyVisit": "Goa offers a unique blend of Portuguese heritage, laid-back beach life, water adventures, and world-class culinary experiences.",
+    "topExperiences": [
+      "Relaxing at a beach shack with fresh seafood at sunset in Baga or Palolem.",
+      "Exploring the historic 17th-century Portuguese battlements of Fort Aguada.",
+      "Trekking to Dudhsagar Falls, where water cascades down like milk."
+    ],
+    "foodSpecialties": ["Fish Curry Rice", "Pork Vindaloo", "Bebinca", "Prawn Balchao", "Feni"],
+    "travelTips": [
+      "Rent a scooter to navigate the narrow beach streets easily.",
+      "Avoid swimming during the monsoon when currents are extremely strong.",
+      "Try local coastal shacks rather than chain restaurants for authentic food."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Goa Beach & Culture Getaway",
+        "dayByDay": [
+          "Day 1: Arrive, check in at North Goa beach, visit Aguada Fort and Baga Beach.",
+          "Day 2: Scuba diving or parasailing, evening party at Anjuna cliff.",
+          "Day 3: Explore South Goa heritage: Basilica of Bom Jesus and Panaji Latin Quarter.",
+          "Day 4: Take spice plantation tour, try local Goan buffet, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Calangute", "lat": 15.5442, "lng": 73.7553 },
+      { "name": "Panaji", "lat": 15.4909, "lng": 73.8278 },
+      { "name": "Margao", "lat": 15.2736, "lng": 73.9582 }
+    ]
+  },
+  {
+    "name": "Rajasthan",
+    "capital": "Jaipur",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Grand royal palaces, majestic forts, camel desert safaris, colorful folk festivals, and heritage hospitality.",
+    "topCategories": ["Heritage", "Cultural", "Nature", "Religious"],
+    "mustVisitDestinations": ["Jaipur Hawa Mahal", "Udaipur Lake Palace", "Jaisalmer Fort", "Mehrangarh Fort (Jodhpur)", "Pushkar Lake"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,500/day",
+      "midRange": "₹3,800 - ₹7,000/day",
+      "luxury": "₹16,000+/day"
+    },
+    "travelStyleTags": ["Heritage", "Honeymoon", "Photography", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Desert, Forts, Palaces, Royal Heritage",
+    "facts": [
+      "India's largest state by area, dominated by the Thar Desert.",
+      "Jaipur is known as the 'Pink City', Jodhpur as the 'Blue City', and Udaipur as the 'White City'.",
+      "Jaisalmer Fort is one of the very few 'living forts' in the world, with a quarter of the city's population residing inside."
+    ],
+    "weatherOverview": "Arid desert climate. Extremely hot summers, and chilly desert winter nights.",
+    "bestTravelSeason": "Winter (October to March) is gorgeous, with warm sunny days and cool nights, perfect for safaris.",
+    "whyVisit": "To immerse yourself in royal history, experience Rajasthani cultural heritage, buy colorful handicrafts, and stay in palace hotels.",
+    "topExperiences": [
+      "Camping overnight in luxury tents in the sand dunes of Jaisalmer.",
+      "Taking a sunset boat cruise on Lake Pichola in Udaipur.",
+      "Touring the massive courtyards and weapons museum of Mehrangarh Fort."
+    ],
+    "foodSpecialties": ["Dal Baati Churma", "Laal Maas", "Gatte ki Sabzi", "Ker Sangri", "Pyaaz Kachori"],
+    "travelTips": [
+      "Hire local guides at Mehrangarh and Amber Fort; their historical stories are fascinating.",
+      "Drink bottled water throughout desert cities to avoid stomach issues.",
+      "Carry sunscreen and sunglasses; desert sun can be harsh even in winter."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "7 Days",
+        "title": "Royal Rajasthan Triangle",
+        "dayByDay": [
+          "Day 1: Arrive in Jaipur, visit Amber Fort and City Palace.",
+          "Day 2: Tour Hawa Mahal and Jantar Mantar, drive to Jodhpur.",
+          "Day 3: Explore Mehrangarh Fort and Jaswant Thada in Jodhpur.",
+          "Day 4: Drive to Jaisalmer, visit sand dunes for camel safari and camp.",
+          "Day 5: Explore Jaisalmer living fort, drive to Udaipur.",
+          "Day 6: Tour Udaipur Lake Palace, Jagdish Temple, and Saheliyon-ki-Bari.",
+          "Day 7: Sunset cruise on Lake Pichola, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Jaipur", "lat": 26.9124, "lng": 75.7873 },
+      { "name": "Udaipur", "lat": 24.5854, "lng": 73.7125 },
+      { "name": "Jaisalmer", "lat": 26.9157, "lng": 70.9083 }
+    ]
+  },
+  {
+    "name": "Himachal Pradesh",
+    "capital": "Shimla",
+    "bestTimeToVisit": "March to June & October to February",
+    "famousFor": "Snow-capped Himalayan peaks, adventure sports, apple orchards, and hill resort towns.",
+    "topCategories": ["Nature", "Adventure", "Religious"],
+    "mustVisitDestinations": ["Manali Solang Valley", "Shimla Ridge", "Dharamshala & Mcleodganj", "Spiti Valley", "Dalhousie"],
+    "estimatedBudget": {
+      "budget": "₹1,300 - ₹2,600/day",
+      "midRange": "₹4,000 - ₹7,500/day",
+      "luxury": "₹14,000+/day"
+    },
+    "travelStyleTags": ["Adventure", "Solo Travel", "Honeymoon", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1600100397608-f010e527fcbf?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Snow mountains, Adventure sports",
+    "facts": [
+      "Shimla was the summer capital of British India.",
+      "Dharamshala is the residence of His Holiness the Dalai Lama and center of Tibetan culture.",
+      "Home to Kalka-Shimla Toy Train, a UNESCO heritage mountain railway."
+    ],
+    "weatherOverview": "Cool alpine climate, with warm summers (15-30°C), heavy monsoon rain, and snowy freezing winters.",
+    "bestTravelSeason": "Summer (March to June) is perfect for escapes from the plains; Winter (November to February) is ideal for snow sports.",
+    "whyVisit": "To witness snow peaks, escape summer heat, trek pristine trails, and experience Tibetan culture.",
+    "topExperiences": [
+      "Paragliding over Solang Valley in Manali.",
+      "Riding the Kalka-Shimla toy train through 103 tunnels.",
+      "Visiting the Tibetan monasteries and walking around Dalai Lama temple in Dharamshala."
+    ],
+    "foodSpecialties": ["Siddu", "Madra", "Tudkiya Bhath", "Thukpa", "Himachali Dham"],
+    "travelTips": [
+      "Check road conditions before traveling to high passes like Rohtang during winters.",
+      "Carry woolens even during summer evenings as the mountain breeze is cool.",
+      "Acclimatize properly if planning to visit the high-altitude Spiti Valley."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "6 Days",
+        "title": "Himachal Himalayan Gateway",
+        "dayByDay": [
+          "Day 1: Arrive in Chandigarh, drive to Shimla, walk the Mall Road.",
+          "Day 2: Ride toy train, visit Kufri snow viewpoint.",
+          "Day 3: Drive to Manali, explore local temples and hot water springs.",
+          "Day 4: Visit Solang Valley for adventure activities, snow sights.",
+          "Day 5: Drive to Dharamshala, explore Tibetan culture in McLeodganj.",
+          "Day 6: Visit tea gardens in Palampur, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Manali", "lat": 32.2396, "lng": 77.1887 },
+      { "name": "Shimla", "lat": 31.1048, "lng": 77.1734 },
+      { "name": "Dharamshala", "lat": 32.2190, "lng": 76.3234 }
+    ]
+  },
+  {
+    "name": "Jammu and Kashmir",
+    "capital": "Srinagar",
+    "bestTimeToVisit": "March to October (Summer) & December to February (Snow)",
+    "famousFor": "Shikara rides on Dal Lake, houseboats, snow skiing in Gulmarg, and lush green meadows of Pahalgam.",
+    "topCategories": ["Nature", "Adventure", "Religious"],
+    "mustVisitDestinations": ["Dal Lake (Srinagar)", "Gulmarg Ski Slopes", "Pahalgam Valleys", "Sonamarg Glacier", "Vaishno Devi Temple"],
+    "estimatedBudget": {
+      "budget": "₹1,500 - ₹3,000/day",
+      "midRange": "₹4,500 - ₹8,500/day",
+      "luxury": "₹17,000+/day"
+    },
+    "travelStyleTags": ["Honeymoon", "Family Friendly", "Photography", "Adventure"],
+    "bannerImage": "https://images.unsplash.com/photo-1599661509660-f47c94b711e7?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Valleys, Lakes, Snow skiing, Gardens",
+    "facts": [
+      "Often referred to as 'Heaven on Earth' due to its breath-taking natural beauty.",
+      "Srinagar is famous for its floating markets and Mughal Gardens.",
+      "Gulmarg has one of the world's highest operating cable cars (Gondola)."
+    ],
+    "weatherOverview": "Sub-tropical in plains to alpine in mountains. Heavy winter snowfall. Delightful summer temperatures.",
+    "bestTravelSeason": "April to June is peak season for green meadows; December to February is peak season for snow enthusiasts.",
+    "whyVisit": "To experience houseboats, shikara rides, alpine glaciers, apple orchards, and winter snow fields.",
+    "topExperiences": [
+      "Taking a morning shikara ride through the floating gardens of Dal Lake.",
+      "Riding the Gulmarg Gondola over snow-covered pine forests.",
+      "Trekking to Betaab Valley and buying fresh saffron in Pahalgam."
+    ],
+    "foodSpecialties": ["Rogan Josh", "Kahwa Tea", "Yakhni", "Kashmiri Dum Aloo", "Kabab"],
+    "travelTips": [
+      "Prepaid mobile connections from outside J&K do not work; buy a local SIM card.",
+      "Always negotiate shikara and pony riding charges in advance.",
+      "Carry heavy woolen wear if visiting Gulmarg or Sonamarg in winter."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Heaven on Earth Experience",
+        "dayByDay": [
+          "Day 1: Arrive in Srinagar, stay in a heritage houseboat, evening shikara ride.",
+          "Day 2: Explore Mughal Gardens and Shankaracharya Temple in Srinagar.",
+          "Day 3: Travel to Gulmarg, ride the Gondola, enjoy snow walks.",
+          "Day 4: Drive to Pahalgam, visit Betaab Valley and walk by Lidder River.",
+          "Day 5: Buy local dry fruits and saffron, return to Srinagar, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Srinagar", "lat": 34.0837, "lng": 74.7973 },
+      { "name": "Gulmarg", "lat": 34.0484, "lng": 74.3805 },
+      { "name": "Pahalgam", "lat": 34.0161, "lng": 75.1931 }
+    ]
+  },
+  {
+    "name": "Ladakh",
+    "capital": "Leh",
+    "bestTimeToVisit": "June to September",
+    "famousFor": "Cold desert landscapes, Pangong Tso Lake, high mountain passes, and ancient Buddhist monasteries.",
+    "topCategories": ["Nature", "Adventure", "Cultural"],
+    "mustVisitDestinations": ["Pangong Lake", "Nubra Valley Dunes", "Khardung La Pass", "Thiksey Monastery", "Magnetic Hill"],
+    "estimatedBudget": {
+      "budget": "₹1,800 - ₹3,200/day",
+      "midRange": "₹4,800 - ₹8,500/day",
+      "luxury": "₹15,000+/day"
+    },
+    "travelStyleTags": ["Adventure", "Solo Travel", "Photography", "Road Trip"],
+    "bannerImage": "https://images.unsplash.com/photo-1595166249970-2b23a91dd2b0?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Cold desert, Monasteries, High passes",
+    "facts": [
+      "Known as the 'Land of High Passes' and boasts the highest motorable roads in the world.",
+      "Pangong Tso changes its colors from azure blue to deep green throughout the day.",
+      "Home to the unique double-humped Bactrian camels in Hunder dunes."
+    ],
+    "weatherOverview": "Extremely cold and dry desert climate. Winters are harsh with sub-zero temperatures (-25°C). Summers are mild (15-25°C).",
+    "bestTravelSeason": "Summer (June to September) is the only season when highways from Manali and Srinagar are open.",
+    "whyVisit": "To experience raw Himalayan landscapes, motor biking adventure, and Buddhist cultural heritage.",
+    "topExperiences": [
+      "Camping beside the deep blue waters of high-altitude Pangong Lake.",
+      "Riding Bactrian double-humped camels in Nubra Valley.",
+      "Standing at the top of Khardung La, one of the highest motorable passes in the world."
+    ],
+    "foodSpecialties": ["Thukpa", "Momos", "Butter Tea", "Khambir Bread", "Apricot Jam"],
+    "travelTips": [
+      "Acclimatize in Leh for at least 36 hours before heading to higher altitudes like Pangong.",
+      "Carry cash as ATMs are sparse outside Leh city.",
+      "Obtain an Inner Line Permit (ILP) for Nubra and Pangong online."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "6 Days",
+        "title": "Ladakh Adventure Loop",
+        "dayByDay": [
+          "Day 1: Arrive in Leh, check in, rest for acclimatization.",
+          "Day 2: Sightseeing: Leh Palace, Shanti Stupa, Hall of Fame.",
+          "Day 3: Drive to Nubra Valley via Khardung La, ride camel in Hunder.",
+          "Day 4: Drive to Pangong Lake via Shyok River route.",
+          "Day 5: Witness sunrise at Pangong, drive back to Leh via Chang La.",
+          "Day 6: Depart Leh."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Leh", "lat": 34.1526, "lng": 77.5771 },
+      { "name": "Kargil", "lat": 34.5539, "lng": 76.1349 },
+      { "name": "Nubra Valley", "lat": 34.6863, "lng": 77.5673 }
+    ]
+  },
+  {
+    "name": "Uttarakhand",
+    "capital": "Dehradun",
+    "bestTimeToVisit": "March to June & October to March",
+    "famousFor": "White water rafting in Rishikesh, Char Dham pilgrimage, beautiful lakes of Nainital, and Valley of Flowers.",
+    "topCategories": ["Nature", "Adventure", "Religious", "Wildlife"],
+    "mustVisitDestinations": ["Rishikesh Rafting Ghats", "Jim Corbett National Park", "Nainital Lakes", "Valley of Flowers", "Kedarnath Temple"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,400/day",
+      "midRange": "₹3,500 - ₹6,500/day",
+      "luxury": "₹13,000+/day"
+    },
+    "travelStyleTags": ["Pilgrimage", "Adventure", "Family Friendly", "Nature"],
+    "bannerImage": "https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Char Dham, Ganges Rafting, Wildlife",
+    "facts": [
+      "Commonly called 'Devbhumi' (Land of the Gods) due to its spiritual importance.",
+      "The holy rivers Ganges and Yamuna originate here from Himalayan glaciers.",
+      "Jim Corbett is the oldest national park in India, established in 1936."
+    ],
+    "weatherOverview": "Pleasant in valleys during summers, hot in plains, and snowy in higher reaches in winters.",
+    "bestTravelSeason": "Summer (March to June) is excellent for trekking; winter is perfect for snow and temple visits.",
+    "whyVisit": "To seek spiritual blessing, indulge in yoga retreats, raft down wild rivers, and explore Himalayan wildlife sanctuaries.",
+    "topExperiences": [
+      "White water river rafting in the Ganges at Rishikesh.",
+      "Taking a boat ride on Naini Lake in Nainital.",
+      "Going on an early morning tiger-spotting safari in Jim Corbett Park."
+    ],
+    "foodSpecialties": ["Aloo ke Gutke", "Bal Mithai", "Kafuli", "Gahat ki Dal", "Singori"],
+    "travelTips": [
+      "Book Jim Corbett safari permits months in advance; seats are limited.",
+      "Wear life jackets during rafting; always follow instructions of certified guides.",
+      "Register online for high altitude pilgrimages like Kedarnath."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Uttarakhand Adventure & Lakes",
+        "dayByDay": [
+          "Day 1: Arrive in Dehradun, drive to Rishikesh, attend Ganga Aarti at Triveni Ghat.",
+          "Day 2: Go rafting, try cliff jumping, drive to Nainital.",
+          "Day 3: Sightseeing in Nainital: boating on Naini Lake, view Snow Point.",
+          "Day 4: Drive to Jim Corbett, go on an afternoon open jeep safari.",
+          "Day 5: Morning bird watching tour, drive back to Dehradun, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Rishikesh", "lat": 30.0869, "lng": 78.2676 },
+      { "name": "Dehradun", "lat": 30.3165, "lng": 78.0322 },
+      { "name": "Nainital", "lat": 29.3803, "lng": 79.4636 }
+    ]
+  },
+  {
+    "name": "West Bengal",
+    "capital": "Kolkata",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Darjeeling tea estates, Sundarbans mangrove forests, grand Durga Puja festival, and colonial architecture in Kolkata.",
+    "topCategories": ["Cultural", "Nature", "Heritage", "Wildlife"],
+    "mustVisitDestinations": ["Victoria Memorial", "Darjeeling Tiger Hill", "Sundarbans Tiger Reserve", "Howrah Bridge", "Shantiniketan"],
+    "estimatedBudget": {
+      "budget": "₹1,100 - ₹2,300/day",
+      "midRange": "₹3,200 - font-6,000/day",
+      "luxury": "₹13,500+/day"
+    },
+    "travelStyleTags": ["Cultural", "Photography", "Wildlife", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1600100397608-f010e527fcbf?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Sundarbans tigers, Darjeeling tea, Culture",
+    "facts": [
+      "Kolkata was the headquarters of the British East India Company and the capital of British India till 1911.",
+      "The Sundarbans delta is the largest mangrove forest in the world, home to Royal Bengal Tigers.",
+      "Darjeeling Himalayan Railway is a UNESCO site, lovingly called the 'Toy Train'."
+    ],
+    "weatherOverview": "Tropical climate in plains with high humidity. Mountainous regions like Darjeeling are cool year-round.",
+    "bestTravelSeason": "Winter (October to March) is pleasant and hosts the grand festival season.",
+    "whyVisit": "To immerse in art, literature, historical heritage, see tigers in the wild, and look at snow peaks.",
+    "topExperiences": [
+      "Watching the golden sunrise over Mount Kanchenjunga from Tiger Hill in Darjeeling.",
+      "Walking past the white marble halls of the colonial Victoria Memorial in Kolkata.",
+      "Cruising on a motorized boat through the dense mangrove canals of the Sundarbans."
+    ],
+    "foodSpecialties": ["Kosha Mangsho", "Rasgulla", "Sondesh", "Fish Curry (Maachher Jhol)", "Kathi Rolls"],
+    "travelTips": [
+      "Book your Sundarbans tour only through registered eco-tourism agencies.",
+      "Experience Kolkata during Durga Puja to see city-wide art displays.",
+      "Take a heritage yellow cab or tram for historic city rides."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Darjeeling Hills & Kolkata Culture",
+        "dayByDay": [
+          "Day 1: Arrive in Kolkata, visit Victoria Memorial and Howrah Bridge.",
+          "Day 2: Explore local street food, take heritage tram, fly to Siliguri.",
+          "Day 3: Drive to Darjeeling, walk through tea gardens.",
+          "Day 4: Sunrise at Tiger Hill, ride the Himalayan Toy Train.",
+          "Day 5: Drive to Siliguri, board flight home."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Kolkata", "lat": 22.5726, "lng": 88.3639 },
+      { "name": "Darjeeling", "lat": 27.0410, "lng": 88.2627 },
+      { "name": "Siliguri", "lat": 26.7271, "lng": 88.3953 }
+    ]
+  },
+  {
+    "name": "Odisha",
+    "capital": "Bhubaneswar",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Konark Sun Temple, Jagannath temple in Puri, classical Odissi dance, and Chilika lake marine sanctuary.",
+    "topCategories": ["Heritage", "Religious", "Nature", "Wildlife"],
+    "mustVisitDestinations": ["Konark Sun Temple", "Puri Jagannath Temple", "Chilika Lake", "Udayagiri Caves", "Dhauli Peace Pagoda"],
+    "estimatedBudget": {
+      "budget": "₹1,000 - ₹2,000/day",
+      "midRange": "₹3,000 - ₹5,500/day",
+      "luxury": "₹11,000+/day"
+    },
+    "travelStyleTags": ["Pilgrimage", "Heritage", "Photography", "Solo Travel"],
+    "bannerImage": "https://images.unsplash.com/photo-1514222047394-411db1ec23be?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Jagannath Temple, Sun Temple, Chilika Lake",
+    "facts": [
+      "Konark Sun Temple is designed as a colossal stone chariot with 24 carved wheels.",
+      "Chilika Lake is Asia's largest brackish water lagoon, home to Irrawaddy Dolphins.",
+      "The emperor Ashoka embraced Buddhism after the Kalinga war fought near Dhauli hills."
+    ],
+    "weatherOverview": "Tropical climate with high humidity. Coastal areas are prone to cyclones during the monsoon transition.",
+    "bestTravelSeason": "Winter (October to March) is pleasant, perfect for beach strolls and temple walks.",
+    "whyVisit": "To witness master stone architecture, experience massive temple festivals like Rath Yatra, and spot rare dolphins.",
+    "topExperiences": [
+      "Staring in awe at the complex wheel carvings of Konark Sun Temple.",
+      "Taking a boat cruise in Chilika Lake to spot Irrawaddy Dolphins.",
+      "Relaxing at the clean Golden Beach in Puri."
+    ],
+    "foodSpecialties": ["Chhena Poda", "Dalma", "Pakhala Bhata", "Rasabali", "Khiri"],
+    "travelTips": [
+      "Only Hindus are allowed inside the main sanctum of Puri Jagannath Temple; others can view it from the Raghunandan Library roof.",
+      "Visit Chilika Lake early in the morning for best bird watching and dolphin spots.",
+      "Hire an official guide at Konark to explain the astronomical meaning of the wheels."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Odisha Golden Triangle",
+        "dayByDay": [
+          "Day 1: Arrive in Bhubaneswar, visit Lingaraj Temple and Dhauli Stupa.",
+          "Day 2: Drive to Konark Sun Temple, take photographs, check in at Puri.",
+          "Day 3: Visit Puri Jagannath Temple and relax at Golden Beach.",
+          "Day 4: Take a boat cruise on Chilika Lake, see Irrawaddy Dolphins, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Konark", "lat": 19.8876, "lng": 86.0945 },
+      { "name": "Bhubaneswar", "lat": 20.2961, "lng": 85.8245 },
+      { "name": "Puri", "lat": 19.8135, "lng": 85.8312 }
+    ]
+  },
+  {
+    "name": "Andhra Pradesh",
+    "capital": "Amaravati",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "The rich spiritual hub of Tirupati, Araku valley valleys, Visakhapatnam beaches, and classical Kuchipudi dance.",
+    "topCategories": ["Religious", "Nature", "Beaches", "Heritage"],
+    "mustVisitDestinations": ["Tirupati Temple", "Araku Valley", "Borra Caves", "Rishikonda Beach (Vizag)", "Kondapalli Fort"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,300/day",
+      "midRange": "₹3,200 - ₹6,000/day",
+      "luxury": "₹12,000+/day"
+    },
+    "travelStyleTags": ["Pilgrimage", "Family Friendly", "Nature", "Photography"],
+    "bannerImage": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Tirupati Venkateswara, Araku Valley",
+    "facts": [
+      "Tirupati Venkateswara Temple is one of the most visited and richest spiritual shrines in the world.",
+      "Borra Caves are million-year-old limestone caves featuring naturally formed stalactites and stalagmites.",
+      "First state in India to be formed based on linguistic lines in 1953."
+    ],
+    "weatherOverview": "Hot and humid climate in coastal plains, cooler and pleasant in the Araku hill valley.",
+    "bestTravelSeason": "Winter (October to March) is breezy and ideal for beach tours and forest trails.",
+    "whyVisit": "To visit sacred hill temples, explore limestone caves, and enjoy serene beaches and coffee valleys.",
+    "topExperiences": [
+      "Climbing the sacred hills of Tirumala to visit Lord Venkateswara Temple.",
+      "Riding the scenic Vistadome train through tunnels to Araku Valley.",
+      "Walking along the clean shores of Rishikonda Beach in Visakhapatnam."
+    ],
+    "foodSpecialties": ["Gongura Pachadi", "Andhra Chicken Curry", "Pootharekulu Sweet", "Pesarattu Dosa", "Biryani"],
+    "travelTips": [
+      "Book Tirumala Special Entry Darshan tickets online months in advance.",
+      "Wear decent traditional attire if visiting temple sanctuaries.",
+      "Avoid traveling to Araku valley during heavy monsoon downpours."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Andhra Hills & Coastal Views",
+        "dayByDay": [
+          "Day 1: Arrive in Visakhapatnam, walk RK Beach and visit INS Kursura Submarine Museum.",
+          "Day 2: Take Vistadome train to Araku Valley, explore coffee gardens.",
+          "Day 3: Visit million-year-old Borra Caves, drive back to Vizag.",
+          "Day 4: Visit Simhachalam Temple, enjoy watersports at Rishikonda, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Tirupati", "lat": 13.6288, "lng": 79.4192 },
+      { "name": "Visakhapatnam", "lat": 17.6868, "lng": 83.2185 },
+      { "name": "Vijayawada", "lat": 16.5062, "lng": 80.6480 }
+    ]
+  },
+  {
+    "name": "Arunachal Pradesh",
+    "capital": "Itanagar",
+    "bestTimeToVisit": "October to April",
+    "famousFor": "The majestic Tawang Monastery, green valleys, music festivals, and orchid sanctuaries.",
+    "topCategories": ["Nature", "Adventure", "Religious"],
+    "mustVisitDestinations": ["Tawang Monastery", "Ziro Valley", "Sela Pass", "Namdapha National Park", "Bomdila"],
+    "estimatedBudget": {
+      "budget": "₹1,500 - ₹2,600/day",
+      "midRange": "₹4,000 - ₹7,000/day",
+      "luxury": "₹13,000+/day"
+    },
+    "travelStyleTags": ["Adventure", "Solo Travel", "Photography", "Offbeat"],
+    "bannerImage": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Orchids, Buddhist Monasteries",
+    "facts": [
+      "Known as the 'Land of the Rising Sun' because it receives the first sunlight in India.",
+      "Tawang Monastery is the largest monastery in India and the second largest in the world.",
+      "Ziro Valley hosts the famous outdoor Ziro Festival of Music."
+    ],
+    "weatherOverview": "Varies from sub-tropical in valleys to freezing alpine in high mountain passes.",
+    "bestTravelSeason": "October to April is the best season with clear skies and colorful winter festivals.",
+    "whyVisit": "To explore unexplored mountain passes, witness ancient Buddhist heritage, and experience tribal lifestyles.",
+    "topExperiences": [
+      "Exploring the historic gilded prayer halls of Tawang Monastery.",
+      "Walking past the golden paddy fields of Ziro Valley and meeting Apatani tribes.",
+      "Crossing the frozen Sela Pass at 13,700 feet altitude."
+    ],
+    "foodSpecialties": ["Thukpa", "Momos", "Zan (Millet porridge)", "Pehak (Fermented soya dish)", "Apong (Rice beer)"],
+    "travelTips": [
+      "All domestic tourists require an Inner Line Permit (ILP); get it online before travel.",
+      "Hire a local SUV driver as mountainous road terrains can be highly challenging.",
+      "Pack heavy winter woolens even when traveling during spring months."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Tawang & Ziro Explorer",
+        "dayByDay": [
+          "Day 1: Arrive in Guwahati, drive to Bomdila, visit local monasteries.",
+          "Day 2: Drive to Tawang via the snow-covered Sela Pass.",
+          "Day 3: Explore Tawang Monastery, war memorial, and local lakes.",
+          "Day 4: Drive to Ziro Valley, meet the local tribes.",
+          "Day 5: Walk the bamboo pine forests, drive back to Guwahati, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Tawang", "lat": 27.5861, "lng": 91.8594 },
+      { "name": "Itanagar", "lat": 27.0844, "lng": 93.6053 },
+      { "name": "Ziro", "lat": 27.6333, "lng": 93.8333 }
+    ]
+  },
+  {
+    "name": "Assam",
+    "capital": "Dispur",
+    "bestTimeToVisit": "November to April",
+    "famousFor": "One-horned Rhinoceros of Kaziranga, extensive green tea plantations, Brahmaputra river cruises, and Kamakhya temple.",
+    "topCategories": ["Wildlife", "Nature", "Religious", "Cultural"],
+    "mustVisitDestinations": ["Kaziranga National Park", "Kamakhya Temple", "Majuli River Island", "Sivasagar monuments", "Guwahati Riverfront"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,400/day",
+      "midRange": "₹3,500 - ₹6,500/day",
+      "luxury": "₹12,500+/day"
+    },
+    "travelStyleTags": ["Wildlife", "Nature", "Family Friendly", "Photography"],
+    "bannerImage": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "One-horned Rhinos, Tea estates, Bihu dance",
+    "facts": [
+      "Kaziranga National Park houses two-thirds of the world's great one-horned rhinoceros population.",
+      "Majuli is the world's largest river island, located on the mighty Brahmaputra river.",
+      "Assam is the largest tea-producing region in the world."
+    ],
+    "weatherOverview": "Humid sub-tropical climate. Extremely heavy monsoon rains cause flooding; winters are dry and cool.",
+    "bestTravelSeason": "Winter (November to April) is perfect as wildlife parks are open and weather is pleasant.",
+    "whyVisit": "To go on wildlife safaris, cruise down the Brahmaputra, walk tea estates, and witness Vaishnavite satras.",
+    "topExperiences": [
+      "Going on an early morning elephant/jeep safari to spot Rhinos in Kaziranga.",
+      "Taking a wooden ferry to Majuli Island and visiting mask-making art satras.",
+      "Walking through rows of green tea bushes and tasting fresh Assam CTC tea."
+    ],
+    "foodSpecialties": ["Masor Tenga", "Assamese Khar", "Duck Curry", "Pitha", "Aloo Pitika"],
+    "travelTips": [
+      "Kaziranga remains closed during the monsoon (May to October).",
+      "Purchase fresh tea directly from tea estate processing factories.",
+      "Respect local dress guidelines when entering Kamakhya Temple."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Assam Wildlife & River Island",
+        "dayByDay": [
+          "Day 1: Arrive in Guwahati, visit Kamakhya Temple, take sunset cruise.",
+          "Day 2: Drive to Kaziranga National Park, relax in nature resort.",
+          "Day 3: Morning jeep safari to spot Rhinos, drive to Majuli.",
+          "Day 4: Explore Majuli River Island, visit local satra dance centers.",
+          "Day 5: Drive back to Guwahati, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Guwahati", "lat": 26.1158, "lng": 91.7086 },
+      { "name": "Jorhat", "lat": 26.7509, "lng": 94.2037 },
+      { "name": "Kaziranga", "lat": 26.6667, "lng": 93.3667 }
+    ]
+  },
+  {
+    "name": "Bihar",
+    "capital": "Patna",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "The holy site of Bodh Gaya where Buddha gained enlightenment, ancient Nalanda University ruins, and Madhubani paintings.",
+    "topCategories": ["Religious", "Heritage", "Cultural"],
+    "mustVisitDestinations": ["Mahabodhi Temple", "Nalanda University Ruins", "Rajgir Hot Springs", "Sher Shah Suri Tomb", "Patna Museum"],
+    "estimatedBudget": {
+      "budget": "₹1,000 - ₹1,800/day",
+      "midRange": "₹2,800 - ₹5,000/day",
+      "luxury": "₹10,500+/day"
+    },
+    "travelStyleTags": ["Pilgrimage", "Heritage", "Solo Travel", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1564507592208-0275414643c1?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Bodh Gaya, Nalanda University",
+    "facts": [
+      "Bodh Gaya is the most sacred pilgrimage site for Buddhists worldwide.",
+      "Nalanda was a world-famous ancient university that attracted scholars from China, Greece, and Persia.",
+      "Origin place of both Buddhism and Jainism."
+    ],
+    "weatherOverview": "Humid sub-tropical climate. Extremely hot summers, followed by monsoon rains, and mild winters.",
+    "bestTravelSeason": "Winter (October to March) is pleasant, perfect for exploring monuments and meditating.",
+    "whyVisit": "To walk the paths of the Buddha, explore ancient monastic ruins, and experience spiritual peacefulness.",
+    "topExperiences": [
+      "Meditating under the sacred Bodhi Tree at Mahabodhi Temple.",
+      "Walking past the red-brick classrooms and stupa ruins of ancient Nalanda.",
+      "Taking the ropeway up to the Vishwa Shanti Stupa in Rajgir."
+    ],
+    "foodSpecialties": ["Litti Chokha", "Sattu Paratha", "Khaja", "Thekua", "Anarsa"],
+    "travelTips": [
+      "Hire an official guide at Nalanda; they help locate the library and residential cells.",
+      "Be respectful of the silence rules under the Bodhi Tree.",
+      "Maintain security of personal belongings in busy temple areas."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Buddhist Heritage Trail",
+        "dayByDay": [
+          "Day 1: Arrive in Patna, visit Golghar and Patna Museum.",
+          "Day 2: Drive to Nalanda, explore ancient university ruins, visit Rajgir.",
+          "Day 3: Travel to Bodh Gaya, visit Mahabodhi Temple and various international monasteries.",
+          "Day 4: Morning meditation at Bodhi Tree, return to Patna, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Gaya", "lat": 24.7955, "lng": 84.9994 },
+      { "name": "Patna", "lat": 25.5941, "lng": 85.1376 },
+      { "name": "Nalanda", "lat": 25.1200, "lng": 85.4500 }
+    ]
+  },
+  {
+    "name": "Chhattisgarh",
+    "capital": "Raipur",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Wide Chitrakote waterfalls, rich tribal heritage crafts, green forests, and ancient temples.",
+    "topCategories": ["Nature", "Cultural", "Heritage"],
+    "mustVisitDestinations": ["Chitrakote Falls", "Tirathgarh Waterfalls", "Bastar Tribal Villages", "Sirpur Temples", "Kanger Valley Caves"],
+    "estimatedBudget": {
+      "budget": "₹1,100 - ₹2,000/day",
+      "midRange": "₹3,000 - ₹5,500/day",
+      "luxury": "₹11,000+/day"
+    },
+    "travelStyleTags": ["Offbeat", "Nature", "Photography", "Cultural"],
+    "bannerImage": "https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Waterfalls, Tribal reserves, Temples",
+    "facts": [
+      "Chitrakote Falls is the widest waterfall in India, often called the 'Niagara of India'.",
+      "Over 40% of the state area is covered with rich green forests.",
+      "Famous for Bastar bell-metal handicrafts called Dhokra art."
+    ],
+    "weatherOverview": "Tropical climate, hot summers, wet monsoons, and dry pleasant winters.",
+    "bestTravelSeason": "Winter (October to March) is the best travel season with waterfalls in full flow and pleasant forest temperatures.",
+    "whyVisit": "To explore raw waterfalls, see ancient caves, buy tribal metal crafts, and escape heavy commercial tourism.",
+    "topExperiences": [
+      "Watching the majestic horseshoe-shaped Chitrakote Falls roar during sunrise.",
+      "Exploring the dark, natural stalactite limestone formations in Kutumsar Caves.",
+      "Visiting tribal weekly markets in Bastar to see authentic local crafts."
+    ],
+    "foodSpecialties": ["Chila", "Muthiya", "Bafauri", "Fara", "Aamat"],
+    "travelTips": [
+      "Hire a local guide when visiting deep tribal villages or forest caves.",
+      "Monsoon (July to September) makes waterfalls massive but limits cave entry.",
+      "Buy authentic Dhokra metal art directly from local artisan cooperatives."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Bastar Waterfalls & Tribes",
+        "dayByDay": [
+          "Day 1: Arrive in Raipur, visit local museums, drive to Jagdalpur.",
+          "Day 2: Tour Chitrakote Falls, explore surrounding temples.",
+          "Day 3: Visit Tirathgarh Falls and explore Kutumsar Caves in Kanger Valley.",
+          "Day 4: Buy Bastar wooden and metal crafts, return to Raipur, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Jagdalpur", "lat": 19.0730, "lng": 82.0281 },
+      { "name": "Raipur", "lat": 21.2514, "lng": 81.6296 },
+      { "name": "Bilaspur", "lat": 22.0790, "lng": 82.1399 }
+    ]
+  },
+  {
+    "name": "Haryana",
+    "capital": "Chandigarh",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "The historic battlefield of Kurukshetra, Sultanpur bird sanctuary, and rustic dairy culture.",
+    "topCategories": ["Heritage", "Religious", "Wildlife"],
+    "mustVisitDestinations": ["Kurukshetra Brahma Sarovar", "Sultanpur Bird Sanctuary", "Pinjore Gardens", "Surajkund Crafts Mela", "Jyotisar"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,200/day",
+      "midRange": "₹3,200 - ₹6,000/day",
+      "luxury": "₹12,000+/day"
+    },
+    "travelStyleTags": ["Family Friendly", "Pilgrimage", "Wildlife", "Heritage"],
+    "bannerImage": "https://images.unsplash.com/photo-1587922546307-776227941871?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Auto industries, Kurukshetra, Birds",
+    "facts": [
+      "Kurukshetra is the historical site of the epic Mahabharata war.",
+      "Hosts the annual Surajkund International Crafts Mela, displaying global handloom heritage.",
+      "The name translates to 'Abode of God'."
+    ],
+    "weatherOverview": "Continental climate with hot summers and cold winters. Very dry atmosphere.",
+    "bestTravelSeason": "Winter (October to March) is ideal for visiting lakes and spotting migratory birds.",
+    "whyVisit": "To explore places linked to Indian epics, walk beautiful terraced gardens, and spot hundreds of species of birds.",
+    "topExperiences": [
+      "Walking around the massive Brahma Sarovar tank in Kurukshetra.",
+      "Spotting migratory birds at Sultanpur Lake in winter.",
+      "Exploring the 17th-century Mughal style terraced gardens at Pinjore."
+    ],
+    "foodSpecialties": ["Bajra Khichri", "Singri ki Sabzi", "Kadhi Pakora", "Lassi", "Cholia"],
+    "travelTips": [
+      "Visit in February to experience the massive Surajkund Crafts Mela.",
+      "Carry binoculars when visiting Sultanpur Bird Sanctuary.",
+      "Taste local fresh dairy items like curd and white butter."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "3 Days",
+        "title": "Epic & Nature Tour",
+        "dayByDay": [
+          "Day 1: Arrive in Gurugram, spend morning bird watching at Sultanpur Sanctuary.",
+          "Day 2: Drive to Kurukshetra, visit Brahma Sarovar and Jyotisar (Bhagavad Gita site).",
+          "Day 3: Visit Pinjore Gardens, explore nearby Chandigarh landmarks, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Gurugram", "lat": 28.4595, "lng": 77.0266 },
+      { "name": "Faridabad", "lat": 28.4089, "lng": 77.3178 },
+      { "name": "Kurukshetra", "lat": 29.9695, "lng": 76.8783 }
+    ]
+  },
+  {
+    "name": "Jharkhand",
+    "capital": "Ranchi",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Scenic waterfalls around Ranchi, Baidyanath Jyotirlinga temple, mineral reserves, and dense forests.",
+    "topCategories": ["Nature", "Religious", "Wildlife"],
+    "mustVisitDestinations": ["Dassam Falls", "Hundru Falls", "Baidyanath Dham (Deoghar)", "Netarhat Queen of Chhotanagpur", "Betla National Park"],
+    "estimatedBudget": {
+      "budget": "₹1,100 - ₹2,000/day",
+      "midRange": "₹3,000 - ₹5,500/day",
+      "luxury": "₹11,000+/day"
+    },
+    "travelStyleTags": ["Pilgrimage", "Offbeat", "Nature", "Photography"],
+    "bannerImage": "https://images.unsplash.com/photo-1514222047394-411db1ec23be?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Waterfalls, Steel plants, Pilgrimage",
+    "facts": [
+      "Jharkhand translates to 'Land of Forests'.",
+      "Deoghar Baidyanath temple houses one of the twelve sacred Jyotirlingas of Lord Shiva.",
+      "Betla National Park was one of the first national parks in India to host a tiger census."
+    ],
+    "weatherOverview": "Humid sub-tropical climate. High hills like Netarhat enjoy pleasant cool weather throughout the year.",
+    "bestTravelSeason": "Winter (October to March) is cool, fresh, and perfect for picnics at waterfalls.",
+    "whyVisit": "To seek spiritual blessings, visit scenic waterfalls, and experience quiet green hills away from tourist crowds.",
+    "topExperiences": [
+      "Standing near the gushing waters of Hundru and Dassam waterfalls.",
+      "Watching the sunset from the hills of Netarhat.",
+      "Joining the holy prayers at Deoghar Baidyanath Temple."
+    ],
+    "foodSpecialties": ["Dhuska", "Litti", "Arsa Roti", "Chilka Roti", "Mada Pitha"],
+    "travelTips": [
+      "Wear slip-resistant shoes when visiting rocky waterfall pools.",
+      "Be prepared for heavy crowds during the Shravan month in Deoghar temple.",
+      "Check forest department guidelines before entering Betla National Park."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Waterfalls & Hills Retreat",
+        "dayByDay": [
+          "Day 1: Arrive in Ranchi, explore Rock Garden and Kanke Dam.",
+          "Day 2: Visit Hundru and Dassam Falls, take photographs.",
+          "Day 3: Drive to Netarhat, enjoy misty mountain views and sunset.",
+          "Day 4: Drive to Deoghar, visit Baidyanath Temple, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Deoghar", "lat": 24.4820, "lng": 86.6974 },
+      { "name": "Ranchi", "lat": 23.3441, "lng": 85.3096 },
+      { "name": "Jamshedpur", "lat": 22.8046, "lng": 86.2029 }
+    ]
+  },
+  {
+    "name": "Madhya Pradesh",
+    "capital": "Bhopal",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Erotic carved temples of Khajuraho, tigers in Kanha & Bandhavgarh, Sanchi Stupa, and Marble Rocks of Jabalpur.",
+    "topCategories": ["Heritage", "Wildlife", "Religious", "Nature"],
+    "mustVisitDestinations": ["Khajuraho Temples", "Sanchi Stupa", "Kanha Tiger Reserve", "Gwalior Fort", "Bhimbetka Caves"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,300/day",
+      "midRange": "₹3,500 - ₹6,500/day",
+      "luxury": "₹13,500+/day"
+    },
+    "travelStyleTags": ["Heritage", "Wildlife", "Photography", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1600100397608-f010e527fcbf?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Khajuraho, Tigers, Sanchi Stupa",
+    "facts": [
+      "Known as the 'Heart of India' due to its central geographical location.",
+      "Bhimbetka rock shelters contain paintings that are over 30,000 years old.",
+      "Has the largest forest cover and the highest tiger population in India."
+    ],
+    "weatherOverview": "Dry sub-tropical climate. Hot summers, humid monsoons, and cool pleasant winters.",
+    "bestTravelSeason": "Winter (October to March) is ideal for exploring ruins and going on tiger safaris.",
+    "whyVisit": "To explore rock art, marvel at medieval temple carvings, and go on top-tier wildlife safaris.",
+    "topExperiences": [
+      "Staring in detail at the intricate erotic sculptures of Khajuraho.",
+      "Going on an early morning open-jeep tiger safari in Kanha.",
+      "Boating between the towering marble rocks in Bhedaghat (Jabalpur)."
+    ],
+    "foodSpecialties": ["Poha Jalebi", "Bhutte ka Kees", "Dal Bafla", "Mawa Bati", "Seekh Kebab"],
+    "travelTips": [
+      "Hire a certified ASI guide at Khajuraho and Sanchi to understand the history.",
+      "Book tiger safari slots months in advance as they sell out fast.",
+      "Try the local hot Poha Jalebi breakfast."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "6 Days",
+        "title": "Heart of India Heritage & Tiger",
+        "dayByDay": [
+          "Day 1: Arrive in Bhopal, visit Bhimbetka Caves and Sanchi Stupa.",
+          "Day 2: Drive to Jabalpur, boat at Marble Rocks.",
+          "Day 3: Travel to Kanha Tiger Reserve, relax at jungle lodge.",
+          "Day 4: Morning and afternoon safaris in Kanha.",
+          "Day 5: Drive to Khajuraho, explore temples, see light show.",
+          "Day 6: Tour Gwalior Fort, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Khajuraho", "lat": 24.8318, "lng": 79.9199 },
+      { "name": "Bhopal", "lat": 23.2599, "lng": 77.4126 },
+      { "name": "Indore", "lat": 22.7196, "lng": 75.8577 }
+    ]
+  },
+  {
+    "name": "Manipur",
+    "capital": "Imphal",
+    "bestTimeToVisit": "October to April",
+    "famousFor": "Floating Loktak lake, classical Manipuri dance, Keibul Lamjao national park, and green hills.",
+    "topCategories": ["Nature", "Cultural", "Wildlife"],
+    "mustVisitDestinations": ["Loktak Lake", "Keibul Lamjao Park", "Kangla Fort", "Ima Keithel Market", "Ukhrul Hills"],
+    "estimatedBudget": {
+      "budget": "₹1,400 - ₹2,500/day",
+      "midRange": "₹3,800 - ₹6,800/day",
+      "luxury": "₹12,000+/day"
+    },
+    "travelStyleTags": ["Offbeat", "Nature", "Cultural", "Solo Travel"],
+    "bannerImage": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Floating lake, Classical dance, Orchids",
+    "facts": [
+      "Loktak is the largest freshwater lake in Northeast India, famous for floating islands called Phumdis.",
+      "Keibul Lamjao is the world's only floating national park, home to the endangered Sangai brow-antlered deer.",
+      "Ima Keithel is a 500-year-old market run entirely by thousands of married women."
+    ],
+    "weatherOverview": "Temperate climate, warm in summers and cool in winters. Frequent heavy rain during monsoon.",
+    "bestTravelSeason": "October to April is the best season with comfortable dry weather and local tribal festivals.",
+    "whyVisit": "To witness unique floating lakes, see rare deer species, visit historic forts, and shop at women-run markets.",
+    "topExperiences": [
+      "Taking a wooden boat through the floating circular Phumdis of Loktak Lake.",
+      "Spotting the rare dancing Sangai deer in Keibul Lamjao Park.",
+      "Shopping for traditional handwoven shawls at Ima Keithel market in Imphal."
+    ],
+    "foodSpecialties": ["Kangshoi", "Eromba", "Singju", "Chak-Hao Kheer", "Morok Metpa"],
+    "travelTips": [
+      "Carry identification documents as security checks are common on highways.",
+      "Visit Ima Keithel early in the morning to see it in full activity.",
+      "Taste the local black rice kheer (Chak-Hao); it is aromatic and delicious."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Floating Lake & Culture",
+        "dayByDay": [
+          "Day 1: Arrive in Imphal, visit Kangla Fort and Ima Keithel market.",
+          "Day 2: Drive to Loktak Lake, stay in a lake resort, go boating.",
+          "Day 3: Visit Keibul Lamjao Park to spot Sangai deer, drive to Ukhrul Hills.",
+          "Day 4: Explore Shirui peak and return to Imphal, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Bishnupur", "lat": 24.6333, "lng": 93.7667 },
+      { "name": "Imphal", "lat": 24.8170, "lng": 93.9368 },
+      { "name": "Ukhrul", "lat": 25.1167, "lng": 94.3667 }
+    ]
+  },
+  {
+    "name": "Meghalaya",
+    "capital": "Shillong",
+    "bestTimeToVisit": "October to April",
+    "famousFor": "Living root bridges of Cherrapunji, massive limestone caves, crystal clear Umngot river, and green pine hills.",
+    "topCategories": ["Nature", "Adventure", "Cultural"],
+    "mustVisitDestinations": ["Double Decker Root Bridge", "Umngot River (Dawki)", "Mawsynram Rain Hub", "Nohkalikai Falls", "Shillong Peak"],
+    "estimatedBudget": {
+      "budget": "₹1,400 - ₹2,600/day",
+      "midRange": "₹4,000 - ₹7,500/day",
+      "luxury": "₹14,000+/day"
+    },
+    "travelStyleTags": ["Adventure", "Nature", "Solo Travel", "Photography"],
+    "bannerImage": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Rainfall, Living root bridges, Hills",
+    "facts": [
+      "The name translates to 'Abode of Clouds'.",
+      "Mawsynram and Cherrapunji receive the highest annual rainfall in the world.",
+      "Dawki's Umngot River has water so clear that boats appear to float in the air."
+    ],
+    "weatherOverview": "Sub-tropical alpine climate, humid in valleys, cool in hills. Heavy downpours from June to September.",
+    "bestTravelSeason": "Winter (October to April) has sunny blue skies, clear river waters, and perfect trekking conditions.",
+    "whyVisit": "To trek to living root bridges, boat on glass-clear rivers, explore cave networks, and enjoy rock music in Shillong.",
+    "topExperiences": [
+      "Trekking down 3,000 steps to see the Double Decker Living Root Bridge in Nongriat.",
+      "Boating on the crystal-clear waters of Umngot River in Dawki.",
+      "Standing at the edge of Nohkalikai Falls, the tallest plunge waterfall in India."
+    ],
+    "foodSpecialties": ["Jadoh", "Dohneiiong (Pork with sesame)", "Tungrymbai", "Pukhlein", "Kyat"],
+    "travelTips": [
+      "Trekking to root bridges requires high physical fitness; carry salt for leeches.",
+      "Avoid visiting Dawki river during monsoons, as heavy rain makes the water muddy.",
+      "Respect the cleanliness and sacred forest laws of Mawphlang Sacred Grove."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Meghalaya Clouds & Bridges",
+        "dayByDay": [
+          "Day 1: Arrive in Guwahati, drive to Shillong, explore local cafes.",
+          "Day 2: Drive to Cherrapunji, see Nohkalikai Falls and explore Mawsmai Cave.",
+          "Day 3: Trek down to the Double Decker Living Root Bridge in Nongriat.",
+          "Day 4: Drive to Dawki, boat on Umngot River, visit clean Mawlynnong village.",
+          "Day 5: Walk the Mawphlang Sacred Grove, drive to Guwahati, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Cherrapunji", "lat": 25.2789, "lng": 91.7289 },
+      { "name": "Shillong", "lat": 25.5788, "lng": 91.8831 },
+      { "name": "Tura", "lat": 25.5135, "lng": 90.2201 }
+    ]
+  },
+  {
+    "name": "Mizoram",
+    "capital": "Aizawl",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Mist-covered blue hills, bamboo dance, rich tribal culture, and wild natural reserves.",
+    "topCategories": ["Nature", "Cultural", "Adventure"],
+    "mustVisitDestinations": ["Phawngpui Blue Mountain", "Vantawng Waterfalls", "Reiek Tlang Peak", "Tam Dil Lake", "Solomon's Temple"],
+    "estimatedBudget": {
+      "budget": "₹1,300 - ₹2,400/day",
+      "midRange": "₹3,500 - ₹6,500/day",
+      "luxury": "₹11,500+/day"
+    },
+    "travelStyleTags": ["Offbeat", "Nature", "Solo Travel", "Adventure"],
+    "bannerImage": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Green hills, Bamboo dance, Culture",
+    "facts": [
+      "Second most literate state in India, with over 91% literacy rate.",
+      "Phawngpui is the highest peak in Mizoram, known as the 'Blue Mountain'.",
+      "Famous for Cheraw, a high-skill traditional dance performed using bamboo poles."
+    ],
+    "weatherOverview": "Mild temperate climate. Summers are pleasant, monsoons are wet, and winters are cool and dry.",
+    "bestTravelSeason": "Winter (October to March) is dry and cool, ideal for trekking and exploring misty peaks.",
+    "whyVisit": "To experience peaceful hill town cultures, see double-tier waterfalls, and trek up misty peaks.",
+    "topExperiences": [
+      "Trekking up Reiek Tlang Peak to see panoramic views of Bangladesh plains.",
+      "Watching the sunset over the mist-clad hills from Solomon's Temple in Aizawl.",
+      "Admiring the double-tier cascade of Vantawng Falls, the tallest in the state."
+    ],
+    "foodSpecialties": ["Bai (Steamed veggies with pork)", "Vawksa Rep (Smoked pork)", "Sawhchiar", "Arsa Buhchiar", "Koat Pitha"],
+    "travelTips": [
+      "Domestic tourists require an Inner Line Permit (ILP) to enter Mizoram.",
+      "Most shops and restaurants close early by 7:00 PM; plan dinners accordingly.",
+      "Respect local Sunday church traditions when most public places remain quiet."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Mizoram Blue Hills",
+        "dayByDay": [
+          "Day 1: Arrive in Lengpui, drive to Aizawl, visit Solomon's Temple.",
+          "Day 2: Drive to Reiek Peak, trek to the top, explore traditional Mizo village.",
+          "Day 3: Drive to Thenzawl, see Vantawng Falls, return to Aizawl.",
+          "Day 4: Visit local markets for handloom shawls, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Aizawl", "lat": 23.7271, "lng": 92.7176 },
+      { "name": "Lunglei", "lat": 22.8671, "lng": 92.7651 },
+      { "name": "Champhai", "lat": 23.4566, "lng": 93.3282 }
+    ]
+  },
+  {
+    "name": "Nagaland",
+    "capital": "Kohima",
+    "bestTimeToVisit": "October to May",
+    "famousFor": "Vibrant Hornbill Festival, green Dzukou valley, tribal village cultures, and war memorials.",
+    "topCategories": ["Cultural", "Nature", "Adventure"],
+    "mustVisitDestinations": ["Dzukou Valley", "Kohima War Cemetery", "Khonoma Green Village", "Kisama Heritage Village", "Mokokchung Hills"],
+    "estimatedBudget": {
+      "budget": "₹1,400 - ₹2,500/day",
+      "midRange": "₹4,000 - ₹7,000/day",
+      "luxury": "₹13,000+/day"
+    },
+    "travelStyleTags": ["Cultural", "Adventure", "Solo Travel", "Photography"],
+    "bannerImage": "https://images.unsplash.com/photo-1600100397608-f010e527fcbf?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Hornbill Festival, Hill tribes",
+    "facts": [
+      "Kisama Heritage Village hosts the annual Hornbill Festival in December, representing 17 major tribes.",
+      "Khonoma is Asia's first official green village, famous for environmental conservation.",
+      "English is the official state language."
+    ],
+    "weatherOverview": "Humid sub-tropical climate. High altitudes like Kohima are cold and breezy in winter.",
+    "bestTravelSeason": "October to May is dry and pleasant. Early December is peak season due to the Hornbill Festival.",
+    "whyVisit": "To witness colorful Naga tribal attire and dances, trek green lily valleys, and see colonial war history.",
+    "topExperiences": [
+      "Trekking through the dwarf bamboo hills and lilies of Dzukou Valley.",
+      "Attending the massive tribal dances and drum performances at the Hornbill Festival.",
+      "Exploring the historic battle grounds of the Kohima War Cemetery."
+    ],
+    "foodSpecialties": ["Smoked Pork with Bamboo Shoot", "Axone (Fermented soy)", "Galho", "Roasted Intestine", "Zutho (Rice beer)"],
+    "travelTips": [
+      "All domestic tourists must obtain an Inner Line Permit (ILP) before arrival.",
+      "Book accommodations in Kohima months in advance if traveling during the Hornbill Festival.",
+      "Carry sturdy trekking gear and rain protection if going to Dzukou Valley."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Naga Heritage & Hills",
+        "dayByDay": [
+          "Day 1: Arrive in Dimapur, drive to Kohima, visit War Cemetery.",
+          "Day 2: Visit Khonoma green village, learn about local conservation.",
+          "Day 3: Spend the day at Kisama Heritage Village exploring Naga tribal huts.",
+          "Day 4: Start early trek to the breathtaking Dzukou Valley, camp overnight.",
+          "Day 5: Trek back, drive to Dimapur, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Kohima", "lat": 25.6751, "lng": 94.1086 },
+      { "name": "Dimapur", "lat": 25.9064, "lng": 93.7266 },
+      { "name": "Mokokchung", "lat": 26.3267, "lng": 94.5217 }
+    ]
+  },
+  {
+    "name": "Sikkim",
+    "capital": "Gangtok",
+    "bestTimeToVisit": "March to June & October to December",
+    "famousFor": "Majestic view of Mount Kanchenjunga, high-altitude lakes, Buddhist monasteries, and fully organic farming.",
+    "topCategories": ["Nature", "Adventure", "Religious"],
+    "mustVisitDestinations": ["Tsomgo Lake", "Gurudongmar Lake", "Rumtek Monastery", "Nathu La Pass", "Yumthang Valley of Flowers"],
+    "estimatedBudget": {
+      "budget": "₹1,400 - ₹2,600/day",
+      "midRange": "₹4,000 - ₹7,500/day",
+      "luxury": "₹14,500+/day"
+    },
+    "travelStyleTags": ["Adventure", "Nature", "Photography", "Honeymoon"],
+    "bannerImage": "https://images.unsplash.com/photo-1595166249970-2b23a91dd2b0?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Kanchenjunga, Organic farming, Lakes",
+    "facts": [
+      "First fully organic state in the world, with all agricultural land certified organic.",
+      "Home to Mount Kanchenjunga, the third highest mountain peak in the world.",
+      "Houses Gurudongmar Lake, one of the highest lakes in the world at 17,800 feet."
+    ],
+    "weatherOverview": "Alpine climate. Freezing sub-zero winters in north, cool summers in the capital city Gangtok.",
+    "bestTravelSeason": "Spring (March to May) is colorful with orchid blooms; autumn (October to November) has clear views of snow peaks.",
+    "whyVisit": "To see snow-covered peaks, visit peaceful monasteries, trek glaciers, and experience eco-friendly mountain life.",
+    "topExperiences": [
+      "Driving up to the frozen turquoise waters of high Gurudongmar Lake.",
+      "Visiting Nathu La Pass on the Indo-China border.",
+      "Walking past the golden stupas and listening to prayer chants at Rumtek Monastery."
+    ],
+    "foodSpecialties": ["Momos", "Thukpa", "Phagshapa (Pork with radish)", "Sha Phaley", "Chhurpi (Yak cheese)"],
+    "travelTips": [
+      "Nathu La Pass and North Sikkim require special permits; arrange them via local agents a day ahead.",
+      "Plastic water bottles are banned in tourist zones like Lachen and Lachung; carry reusable flasks.",
+      "Gurudongmar Lake has low oxygen levels; travelers with breathing issues must consult doctors before going."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Sikkim Peaks & Passes",
+        "dayByDay": [
+          "Day 1: Arrive in Bagdogra, drive to Gangtok, walk the MG Marg promenade.",
+          "Day 2: Day trip to Tsomgo Lake and Nathu La Pass on Indo-China border.",
+          "Day 3: Drive to Lachung, see waterfalls along the route.",
+          "Day 4: Visit Yumthang Valley of Flowers, return to Gangtok.",
+          "Day 5: Tour Rumtek Monastery, drive to airport, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Gangtok", "lat": 27.3314, "lng": 88.6138 },
+      { "name": "Namchi", "lat": 27.1683, "lng": 88.3551 },
+      { "name": "Pelling", "lat": 27.3000, "lng": 88.2333 }
+    ]
+  },
+  {
+    "name": "Telangana",
+    "capital": "Hyderabad",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Historical Charminar, Golconda Fort, world-famous Hyderabadi Biryani, and modern IT hubs.",
+    "topCategories": ["Heritage", "Cultural", "Religious"],
+    "mustVisitDestinations": ["Charminar", "Golconda Fort", "Ramoji Film City", "Qutb Shahi Tombs", "Salargunj Museum"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,500/day",
+      "midRange": "₹3,500 - ₹7,000/day",
+      "luxury": "₹14,050+/day"
+    },
+    "travelStyleTags": ["Family Friendly", "Heritage", "Photography", "Solo Travel"],
+    "bannerImage": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Biryani, Charminar, IT industry",
+    "facts": [
+      "Hyderabad is globally famous for its pearls and traditional glass-bangle markets.",
+      "Golconda Fort is famous for its acoustic system where a clap at the entrance can be heard at the hilltop citadel.",
+      "Ramoji Film City is certified by Guinness as the largest integrated film studio complex in the world."
+    ],
+    "weatherOverview": "Semi-arid climate with hot summers and mild, dry winters.",
+    "bestTravelSeason": "Winter (October to March) is perfect for exploring historical fort ruins.",
+    "whyVisit": "To explore Nizami heritage, visit massive film studios, shop for pearls, and taste world-famous biryanis.",
+    "topExperiences": [
+      "Climbing the minarets of Charminar for a view of the old bazaar.",
+      "Watching the sound and light show at Golconda Fort.",
+      "Tasting authentic wood-fired Hyderabadi Biryani and Haleem."
+    ],
+    "foodSpecialties": ["Hyderabadi Biryani", "Double ka Meetha", "Haleem", "Pathar ka Gosht", "Osmania Biscuits"],
+    "travelTips": [
+      "Hire a local guide at Golconda Fort to understand its defensive echo systems.",
+      "Visit Laad Bazaar near Charminar in the evening to buy lacquer bangles.",
+      "Dedicate a full day if planning to visit Ramoji Film City."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Nizami Heritage & Film City",
+        "dayByDay": [
+          "Day 1: Arrive, explore Charminar, Mecca Masjid, and shop at Laad Bazaar.",
+          "Day 2: Tour Golconda Fort and Qutb Shahi Tombs, evening sound & light show.",
+          "Day 3: Spend the full day at Ramoji Film City.",
+          "Day 4: Visit Salar Jung Museum and Chowmahalla Palace, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Hyderabad", "lat": 17.3850, "lng": 78.4867 },
+      { "name": "Warangal", "lat": 17.9784, "lng": 79.5941 },
+      { "name": "Nizamabad", "lat": 18.6725, "lng": 78.0941 }
+    ]
+  },
+  {
+    "name": "Tripura",
+    "capital": "Agartala",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "White Ujjayanta Palace, ancient rock-cut carvings of Unakoti, and wildlife sanctuaries.",
+    "topCategories": ["Heritage", "Religious", "Nature"],
+    "mustVisitDestinations": ["Ujjayanta Palace", "Unakoti Rock Carvings", "Neermahal Water Palace", "Sepahijala Wildlife Sanctuary", "Tripura Sundari Temple"],
+    "estimatedBudget": {
+      "budget": "₹1,100 - ₹2,000/day",
+      "midRange": "₹3,000 - ₹5,500/day",
+      "luxury": "₹11,000+/day"
+    },
+    "travelStyleTags": ["Offbeat", "Heritage", "Photography", "Solo Travel"],
+    "bannerImage": "https://images.unsplash.com/photo-1514222047394-411db1ec23be?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Ujjayanta Palace, Rock-cut carvings",
+    "facts": [
+      "Third smallest state in India, bordered by Bangladesh on three sides.",
+      "Unakoti has thousands of giant rock-cut stone faces carved onto hillsides.",
+      "Neermahal is one of the only two water palaces in India, built in the middle of Rudrasagar Lake."
+    ],
+    "weatherOverview": "Humid sub-tropical climate. Heavy rains in monsoon, pleasant breezy winters.",
+    "bestTravelSeason": "Winter (October to March) is comfortable, making it perfect for palace walks and rock-carving exploration.",
+    "whyVisit": "To see unique water palaces, explore mysterious rock sculptures, and see offbeat northeast heritage sites.",
+    "topExperiences": [
+      "Touring the royal gardens and galleries of white Ujjayanta Palace.",
+      "Climbing the stone steps at Unakoti to view the giant face of Lord Shiva.",
+      "Taking a boat ride to Neermahal Water Palace at sunset."
+    ],
+    "foodSpecialties": ["Mui Borok (Local fish dish)", "Chakhwi", "Mosdeng (Spicy chutney)", "Wahan Mosdeng", "Panch Phoron Tarkari"],
+    "travelTips": [
+      "Unakoti is a 4-hour drive from Agartala; start early in the morning.",
+      "Take mosquito repellent when visiting Sepahijala wildlife sanctuary.",
+      "Buy local bamboo handicraft items; they are highly skilled and cheap."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "3 Days",
+        "title": "Tripura Palaces & Rocks",
+        "dayByDay": [
+          "Day 1: Arrive in Agartala, visit Ujjayanta Palace and Tripura Sundari Temple.",
+          "Day 2: Drive to Neermahal Water Palace, take boat tour, visit Sepahijala Sanctuary.",
+          "Day 3: Day trip to Unakoti rock carvings, return, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Kailasahar", "lat": 24.3200, "lng": 92.1600 },
+      { "name": "Agartala", "lat": 23.8315, "lng": 91.2868 },
+      { "name": "Udaipur-Tripura", "lat": 23.5333, "lng": 91.4833 }
+    ]
+  },
+  {
+    "name": "Andaman and Nicobar Islands",
+    "capital": "Port Blair",
+    "bestTimeToVisit": "October to May",
+    "famousFor": "Pristine white sand beaches, coral reef scuba diving, and historical colonial prisons.",
+    "topCategories": ["Beaches", "Heritage", "Adventure", "Nature"],
+    "mustVisitDestinations": ["Radhanagar Beach", "Cellular Jail", "Ross Island Ruins", "Baratang Limestone Caves", "Jolly Buoy Island"],
+    "estimatedBudget": {
+      "budget": "₹1,800 - ₹3,200/day",
+      "midRange": "₹4,800 - ₹8,500/day",
+      "luxury": "₹18,000+/day"
+    },
+    "travelStyleTags": ["Honeymoon", "Adventure", "Beaches", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Coral reefs, Cellular jail, Scuba",
+    "facts": [
+      "Home to the only active volcano in India on Barren Island.",
+      "Radhanagar Beach in Havelock was voted Asia's best beach by Time Magazine.",
+      "Cellular Jail is a historic colonial prison where Indian freedom fighters were jailed."
+    ],
+    "weatherOverview": "Tropical maritime climate, warm and humid throughout the year with breeze.",
+    "bestTravelSeason": "October to May is perfect with calm seas, dry weather, and ideal water sports conditions.",
+    "whyVisit": "To dive in rich coral reefs, explore thick forest islands, and learn about national freedom history.",
+    "topExperiences": [
+      "Scuba diving or snorkeling in the clear waters of Havelock Island.",
+      "Watching the sound and light show at the historic Cellular Jail in Port Blair.",
+      "Walking on the white sands of Radhanagar Beach at sunset."
+    ],
+    "foodSpecialties": ["Seafood Platter", "Coconut Prawn Curry", "Grilled Lobster", "Tandoori Fish", "Tropical fruits"],
+    "travelTips": [
+      "Book ferry tickets between Port Blair and Havelock online weeks in advance.",
+      "Do not touch or collect corals; it is a punishable offense under forest law.",
+      "Prepaid mobile data is very slow; download maps and itineraries offline."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "5 Days",
+        "title": "Andaman Beach & Reef Loop",
+        "dayByDay": [
+          "Day 1: Arrive in Port Blair, visit Cellular Jail and watch light show.",
+          "Day 2: Take private cruise to Havelock Island, relax at Radhanagar Beach.",
+          "Day 3: Go scuba diving at Elephant Beach, enjoy water activities.",
+          "Day 4: Take cruise to Neil Island, explore natural rock bridges.",
+          "Day 5: Return to Port Blair, visit Ross Island ruins, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Havelock Island", "lat": 11.9800, "lng": 92.9500 },
+      { "name": "Port Blair", "lat": 11.6234, "lng": 92.7265 },
+      { "name": "Neil Island", "lat": 11.8333, "lng": 93.0500 }
+    ]
+  },
+  {
+    "name": "Chandigarh",
+    "capital": "Chandigarh",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Modern grid urban planning, Rock Garden made of waste materials, and Sukhna Lake.",
+    "topCategories": ["Nature", "Cultural", "Heritage"],
+    "mustVisitDestinations": ["Nek Chand Rock Garden", "Sukhna Lake", "Zakir Hussain Rose Garden", "Le Corbusier Centre", "Sector 17 Plaza"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,500/day",
+      "midRange": "₹3,500 - ₹6,500/day",
+      "luxury": "₹13,000+/day"
+    },
+    "travelStyleTags": ["Family Friendly", "Photography", "Solo Travel", "Shopping"],
+    "bannerImage": "https://images.unsplash.com/photo-1587922546307-776227941871?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Rock Garden, Urban planning, Lakes",
+    "facts": [
+      "First planned city in post-independence India, designed by French architect Le Corbusier.",
+      "The Rock Garden is made entirely of recycled industrial and home waste like bangles and tiles.",
+      "Serves as the joint capital city of Punjab and Haryana."
+    ],
+    "weatherOverview": "Continental climate. Pleasant in winter, hot and dry in summer, mild rains in monsoon.",
+    "bestTravelSeason": "Winter (October to March) is pleasant for lake boating and walking gardens.",
+    "whyVisit": "To see modern architecture, clean green tree avenues, unique waste-recycling gardens, and enjoy shopping.",
+    "topExperiences": [
+      "Walking past the whimsical recycled sculptures at Nek Chand Rock Garden.",
+      "Boating on the quiet waters of Sukhna Lake in the evening.",
+      "Viewing thousands of rose varieties at the Rose Garden."
+    ],
+    "foodSpecialties": ["Butter Chicken", "Amritsari Kulcha", "Paneer Tikka", "Chana Bhatura", "Lassi"],
+    "travelTips": [
+      "The city is strictly planned in Sectors; keep a digital map handy.",
+      "Hire a local bicycle from public stands to ride the extensive green cycle paths.",
+      "Follow traffic rules strictly; traffic cameras are active everywhere."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "2 Days",
+        "title": "Chandigarh Weekend Getaway",
+        "dayByDay": [
+          "Day 1: Arrive, visit Rock Garden, boat at Sukhna Lake, dine at Sector 17.",
+          "Day 2: Tour Rose Garden, Le Corbusier Museum, explore local boutiques, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Chandigarh City", "lat": 30.7333, "lng": 76.7794 },
+      { "name": "Mohali", "lat": 30.7046, "lng": 76.7179 },
+      { "name": "Panchkula", "lat": 30.6915, "lng": 76.8537 }
+    ]
+  },
+  {
+    "name": "Dadra and Nagar Haveli and Daman and Diu",
+    "capital": "Daman",
+    "bestTimeToVisit": "October to March",
+    "famousFor": "Quiet coastal beaches of Diu, Portuguese churches and forts, and scenic lake reserves.",
+    "topCategories": ["Beaches", "Heritage", "Nature"],
+    "mustVisitDestinations": ["Diu Fort", "Jampore Beach (Daman)", "Nagoa Beach (Diu)", "Church of Our Lady of Angustias", "Silvassa Deer Park"],
+    "estimatedBudget": {
+      "budget": "₹1,200 - ₹2,300/day",
+      "midRange": "₹3,500 - ₹6,000/day",
+      "luxury": "₹12,000+/day"
+    },
+    "travelStyleTags": ["Solo Travel", "Beaches", "Heritage", "Family Friendly"],
+    "bannerImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Portuguese Forts, Jampore Beach",
+    "facts": [
+      "Merged into a single Union Territory in January 2020.",
+      "Diu Fort is surrounded by water on three sides, built by Portuguese in 1535.",
+      "Silvassa is a green tribal forest area, formerly ruled by Portuguese."
+    ],
+    "weatherOverview": "Tropical climate with breezy coastal wind. Pleasant winters and wet monsoons.",
+    "bestTravelSeason": "Winter (October to March) is the best travel season for beach sports and fort tours.",
+    "whyVisit": "To explore uncrowded coastal forts, relax on beaches, and see Portuguese colonial architecture.",
+    "topExperiences": [
+      "Exploring the massive stone ramparts and cannons of Diu Fort.",
+      "Walking on the black sands of Jampore Beach in Daman.",
+      "Cycling past old Portuguese churches in Diu."
+    ],
+    "foodSpecialties": ["Seafood Platter", "Dhokla", "Portuguese style chicken", "Gujarati Thali", "Fried Fish"],
+    "travelTips": [
+      "Diu is a popular weekend beach getaway; book beach resorts in advance.",
+      "Rent a bicycle to tour Diu island; it is quiet and scenic.",
+      "Visit Jampore beach for camel rides and water sports."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "3 Days",
+        "title": "Diu Coastal Heritage",
+        "dayByDay": [
+          "Day 1: Arrive in Diu, explore Diu Fort and St. Paul's Church.",
+          "Day 2: Relax at Nagoa Beach, try water sports, see shell museum.",
+          "Day 3: Travel to Daman, walk Jampore Beach, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Daman", "lat": 20.3974, "lng": 72.8328 },
+      { "name": "Diu", "lat": 20.7144, "lng": 70.9822 },
+      { "name": "Silvassa", "lat": 20.2739, "lng": 73.0084 }
+    ]
+  },
+  {
+    "name": "Lakshadweep",
+    "capital": "Kavaratti",
+    "bestTimeToVisit": "October to May",
+    "famousFor": "Pristine turquoise lagoons, coral reef scuba diving, and quiet coconut groves.",
+    "topCategories": ["Beaches", "Adventure", "Nature"],
+    "mustVisitDestinations": ["Agatti Island Lagoon", "Bangaram Atoll", "Kavaratti Marine Aquarium", "Minicoy Lighthouse", "Kalpeni Island"],
+    "estimatedBudget": {
+      "budget": "₹2,000 - ₹3,500/day",
+      "midRange": "₹5,000 - ₹9,000/day",
+      "luxury": "₹20,000+/day"
+    },
+    "travelStyleTags": ["Honeymoon", "Adventure", "Beaches", "Solo Travel"],
+    "bannerImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=1200",
+    "popularFor": "Agatti Lagoon, Corals, Marine life",
+    "facts": [
+      "Smallest Union Territory of India, consisting of an archipelago of 36 coral islands.",
+      "Most islands are atolls, surrounded by shallow crystal-clear turquoise lagoons.",
+      "Minicoy has a classic 1885 lighthouse built by the British."
+    ],
+    "weatherOverview": "Tropical warm maritime climate. Humid but cooled by sea breeze. Closed during monsoons due to rough seas.",
+    "bestTravelSeason": "October to May is the best season with calm lagoon waters and sunny skies.",
+    "whyVisit": "To escape human crowds, dive in colorful coral reefs, kayak in shallow lagoons, and experience remote island life.",
+    "topExperiences": [
+      "Snorkeling with sea turtles in the shallow lagoon of Agatti.",
+      "Staying in a luxury beach cottage on the uninhabited Bangaram Island.",
+      "Climbing the circular stairs of Minicoy Lighthouse for a view of the coconut island."
+    ],
+    "foodSpecialties": ["Tuna Curry", "Coconut Fish Curry", "Kadalakka (Sweet)", "Fried Fish", "Rice and Coconut bread"],
+    "travelTips": [
+      "An entry permit is mandatory for all tourists visiting Lakshadweep; apply online early.",
+      "Scuba diving and kayaking gear are available on major islands like Agatti and Bangaram.",
+      "Bsnl and Airtel are the only mobile networks with basic connectivity."
+    ],
+    "suggestedItineraries": [
+      {
+        "duration": "4 Days",
+        "title": "Lakshadweep Lagoon Escape",
+        "dayByDay": [
+          "Day 1: Flight from Kochi to Agatti, check in at beach resort, evening beach walk.",
+          "Day 2: Go snorkeling and scuba diving in Agatti coral reefs.",
+          "Day 3: Day boat trip to Bangaram uninhabited island, try kayaking.",
+          "Day 4: Visit local coconut fiber workshops in Agatti, depart."
+        ]
+      }
+    ],
+    "cities": [
+      { "name": "Agatti", "lat": 10.8500, "lng": 72.1800 },
+      { "name": "Kavaratti", "lat": 10.5667, "lng": 72.6417 },
+      { "name": "Minicoy", "lat": 8.2833, "lng": 73.0667 }
+    ]
+  }
+]
