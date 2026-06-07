@@ -6,7 +6,7 @@ import {
   Heart, Info, Sun, Eye, Plane, Train, Bus, Car, Hotel, Utensils, 
   Calculator, HelpCircle, ChevronDown, ChevronUp, Star, Award, 
   Activity, Camera, Wallet, Navigation, Coins, Coffee, Sparkles, ShieldAlert,
-  Map, Moon, Compass
+  Map, Moon, Compass, Trash2, MessageSquare, Send, Loader2
 } from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
 import PlaceCard from '../components/PlaceCard';
@@ -39,8 +39,18 @@ const PlaceDetail = () => {
   // FAQs Accordion State
   const [faqOpen, setFaqOpen] = useState(0);
 
-  const { user, wishlist, toggleWishlist } = useAuth();
+  const { user, wishlist, toggleWishlist, token } = useAuth();
   const isWishlisted = place ? wishlist.some(item => item._id === place._id) : false;
+
+  // Reviews State
+  const [reviews, setReviews] = useState([]);
+  const [reviewsLoading, setReviewsLoading] = useState(true);
+  const [reviewRating, setReviewRating] = useState(5);
+  const [reviewHoverRating, setReviewHoverRating] = useState(0);
+  const [reviewText, setReviewText] = useState('');
+  const [submitLoading, setSubmitLoading] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState('');
 
   const handleWishlistClick = () => {
     if (!place) return;
@@ -53,33 +63,130 @@ const PlaceDetail = () => {
     toggleWishlist(place);
   };
 
+  const fetchPlaceDetail = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(`${window.API_BASE_URL}/api/places/slug/${destSlug}`);
+      setPlace(res.data);
+      setActiveImageIndex(0);
+      setFailedImages(new Set());
+      
+      // Fetch similar places in the same state
+      if (res.data.state?._id) {
+        const similarRes = await axios.get(`${window.API_BASE_URL}/api/places?state=${res.data.state._id}`);
+        const filtered = similarRes.data
+          .filter(p => p._id !== res.data._id)
+          .slice(0, 3);
+        setSimilarPlaces(filtered);
+      }
+    } catch (err) {
+      console.error('Error fetching place details:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Fetch place by slug
   useEffect(() => {
     clearImageRegistry();
-    const fetchPlaceDetail = async () => {
-      setLoading(true);
-      try {
-        const res = await axios.get(`${window.API_BASE_URL}/api/places/slug/${destSlug}`);
-        setPlace(res.data);
-        setActiveImageIndex(0);
-        setFailedImages(new Set());
-        
-        // Fetch similar places in the same state
-        if (res.data.state?._id) {
-          const similarRes = await axios.get(`${window.API_BASE_URL}/api/places?state=${res.data.state._id}`);
-          const filtered = similarRes.data
-            .filter(p => p._id !== res.data._id)
-            .slice(0, 3);
-          setSimilarPlaces(filtered);
-        }
-      } catch (err) {
-        console.error('Error fetching place details:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchPlaceDetail();
   }, [destSlug]);
+
+  // Fetch reviews when place is available
+  useEffect(() => {
+    const fetchReviews = async () => {
+      if (!place?._id) return;
+      setReviewsLoading(true);
+      try {
+        const res = await axios.get(`${window.API_BASE_URL}/api/reviews/place/${place._id}`);
+        setReviews(res.data);
+        
+        // Pre-populate user's existing review if any
+        if (user) {
+          const existingReview = res.data.find(r => r.user === user._id);
+          if (existingReview) {
+            setReviewRating(existingReview.rating);
+            setReviewText(existingReview.reviewText);
+          } else {
+            setReviewRating(5);
+            setReviewText('');
+          }
+        }
+      } catch (err) {
+        console.error('Error fetching reviews:', err);
+      } finally {
+        setReviewsLoading(false);
+      }
+    };
+    fetchReviews();
+  }, [place?._id, user]);
+
+  const handleReviewSubmit = async (e) => {
+    e.preventDefault();
+    if (!reviewText.trim()) {
+      setSubmitError('Please enter review text');
+      return;
+    }
+    setSubmitLoading(true);
+    setSubmitError('');
+    setSubmitSuccess('');
+    try {
+      const activeToken = token || localStorage.getItem('token') || sessionStorage.getItem('token');
+      await axios.post(
+        `${window.API_BASE_URL}/api/reviews`,
+        {
+          place: place._id,
+          rating: reviewRating,
+          reviewText: reviewText
+        },
+        activeToken ? { headers: { Authorization: `Bearer ${activeToken}` } } : {}
+      );
+      
+      setSubmitSuccess('Review submitted successfully!');
+      
+      // Refresh reviews list
+      const reviewsRes = await axios.get(`${window.API_BASE_URL}/api/reviews/place/${place._id}`);
+      setReviews(reviewsRes.data);
+      
+      // Refresh place rating details
+      const placeRes = await axios.get(`${window.API_BASE_URL}/api/places/slug/${destSlug}`);
+      setPlace(placeRes.data);
+      
+      setTimeout(() => setSubmitSuccess(''), 3000);
+    } catch (err) {
+      setSubmitError(err.response?.data?.message || 'Failed to submit review');
+    } finally {
+      setSubmitLoading(false);
+    }
+  };
+
+  const handleReviewDelete = async (reviewId) => {
+    if (!window.confirm('Are you sure you want to delete your review?')) return;
+    try {
+      const activeToken = token || localStorage.getItem('token') || sessionStorage.getItem('token');
+      await axios.delete(
+        `${window.API_BASE_URL}/api/reviews/${reviewId}`,
+        activeToken ? { headers: { Authorization: `Bearer ${activeToken}` } } : {}
+      );
+      
+      // Refresh reviews list
+      const reviewsRes = await axios.get(`${window.API_BASE_URL}/api/reviews/place/${place._id}`);
+      setReviews(reviewsRes.data);
+      
+      // Clear form if deleted review was by user
+      const deletedReview = reviews.find(r => r._id === reviewId);
+      if (deletedReview && deletedReview.user === user?._id) {
+        setReviewRating(5);
+        setReviewText('');
+      }
+      
+      // Refresh place rating details
+      const placeRes = await axios.get(`${window.API_BASE_URL}/api/places/slug/${destSlug}`);
+      setPlace(placeRes.data);
+    } catch (err) {
+      alert(err.response?.data?.message || 'Failed to delete review');
+    }
+  };
 
   const validImages = (place?.images || []).filter(img => !failedImages.has(img));
   const activeImage = validImages.length > 0 ? validImages[activeImageIndex % validImages.length] : '';
@@ -217,10 +324,21 @@ const PlaceDetail = () => {
               <span className="bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 border border-indigo-100/40 dark:border-indigo-900/30 font-bold text-[10px] tracking-wider uppercase py-1 px-3.5 rounded-full inline-block">
                 {place.category?.name || 'Destination'}
               </span>
-              <div className="flex items-center text-slate-400 dark:text-slate-500 text-xs font-semibold gap-1.5 bg-slate-100/60 dark:bg-slate-900/40 px-3 py-1 rounded-full border border-slate-200/40 dark:border-slate-800/40">
+              <div className="flex items-center text-slate-400 dark:text-slate-505 text-xs font-semibold gap-1.5 bg-slate-100/60 dark:bg-slate-900/40 px-3 py-1 rounded-full border border-slate-205/40 dark:border-slate-800/40">
                 <Eye className="h-3.5 w-3.5 text-indigo-500" />
                 <span>{place.viewsCount} Travel Planner Views</span>
               </div>
+              {place.reviewCount > 0 ? (
+                <div className="flex items-center text-amber-505 text-amber-500 text-xs font-bold gap-1 bg-amber-500/10 dark:bg-amber-500/5 px-3 py-1 rounded-full border border-amber-500/20">
+                  <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <span>{place.averageRating.toFixed(1)} ({place.reviewCount} {place.reviewCount === 1 ? 'Review' : 'Reviews'})</span>
+                </div>
+              ) : (
+                <div className="flex items-center text-slate-400 dark:text-slate-505 text-xs font-semibold gap-1 bg-slate-100/60 dark:bg-slate-900/40 px-3 py-1 rounded-full border border-slate-205/40 dark:border-slate-800/40">
+                  <Star className="h-3.5 w-3.5 text-slate-400" />
+                  <span>No reviews yet</span>
+                </div>
+              )}
             </div>
             
             <div className="flex justify-between items-start gap-4 flex-wrap mt-3 mb-2">
@@ -717,6 +835,231 @@ const PlaceDetail = () => {
               </div>
             </div>
           )}
+
+          {/* Reviews & Ratings Section */}
+          <div className="bg-white/70 dark:bg-slate-900/60 backdrop-blur-md rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200/40 dark:border-slate-800/40 space-y-6">
+            <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200 pb-3 border-b border-slate-100 dark:border-slate-800 flex items-center gap-2">
+              <MessageSquare className="h-5 w-5 text-indigo-500" />
+              Reviews & Ratings
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+              {/* Left Side: Rating Breakdown */}
+              <div className="md:col-span-5 space-y-4">
+                <div className="bg-slate-50/50 dark:bg-slate-950/20 border border-slate-100 dark:border-slate-850 rounded-2xl p-5 text-center">
+                  <span className="text-4xl font-extrabold text-slate-805 dark:text-slate-200 block">
+                    {place.averageRating ? place.averageRating.toFixed(1) : '0.0'}
+                  </span>
+                  <div className="flex justify-center items-center gap-1 my-1.5">
+                    {[1, 2, 3, 4, 5].map((star) => {
+                      const roundedRating = Math.round(place.averageRating || 0);
+                      return (
+                        <Star 
+                          key={star}
+                          className={`h-4.5 w-4.5 ${
+                            roundedRating >= star 
+                              ? 'fill-amber-500 text-amber-500' 
+                              : 'text-slate-350 dark:text-slate-700'
+                          }`}
+                        />
+                      );
+                    })}
+                  </div>
+                  <span className="text-xs font-semibold text-slate-505 dark:text-slate-400">
+                    Based on {place.reviewCount || 0} {place.reviewCount === 1 ? 'review' : 'reviews'}
+                  </span>
+                </div>
+
+                {/* Stars Breakdown progress bars */}
+                <div className="space-y-2">
+                  {(() => {
+                    const ratingDistribution = [0, 0, 0, 0, 0];
+                    reviews.forEach(r => {
+                      if (r.rating >= 1 && r.rating <= 5) {
+                        ratingDistribution[r.rating - 1]++;
+                      }
+                    });
+                    const totalReviewsCount = reviews.length;
+                    return [5, 4, 3, 2, 1].map(stars => {
+                      const count = ratingDistribution[stars - 1];
+                      const percentage = totalReviewsCount > 0 ? (count / totalReviewsCount) * 100 : 0;
+                      return (
+                        <div key={stars} className="flex items-center gap-3 text-xs font-semibold text-slate-500">
+                          <span className="w-12 flex items-center gap-1">
+                            {stars} <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                          </span>
+                          <div className="flex-1 bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div 
+                              className="bg-amber-500 h-full rounded-full transition-all duration-500"
+                              style={{ width: `${percentage}%` }}
+                            />
+                          </div>
+                          <span className="w-8 text-right text-slate-400 dark:text-slate-550">{count}</span>
+                        </div>
+                      );
+                    });
+                  })()}
+                </div>
+              </div>
+
+              {/* Right Side: Review Form */}
+              <div className="md:col-span-7">
+                {user ? (
+                  <form onSubmit={handleReviewSubmit} className="bg-slate-50/50 dark:bg-slate-955/20 border border-slate-150 dark:border-slate-805/85 rounded-3xl p-5 space-y-4">
+                    <h3 className="font-bold text-slate-808 dark:text-slate-200 text-sm">
+                      {reviews.some(r => r.user === user._id) ? 'Edit Your Review' : 'Write a Review'}
+                    </h3>
+                    
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs font-semibold text-slate-500 mr-2">Your Rating:</span>
+                      <div className="flex items-center gap-1">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <button
+                            key={star}
+                            type="button"
+                            onClick={() => setReviewRating(star)}
+                            onMouseEnter={() => setReviewHoverRating(star)}
+                            onMouseLeave={() => setReviewHoverRating(0)}
+                            className="p-1 focus:outline-none transition-transform active:scale-95 cursor-pointer"
+                          >
+                            <Star 
+                              className={`h-6 w-6 transition-colors ${
+                                (reviewHoverRating || reviewRating) >= star 
+                                  ? 'fill-amber-500 text-amber-500' 
+                                  : 'text-slate-305 dark:text-slate-700'
+                              }`}
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-1 text-left">
+                      <textarea
+                        rows="4"
+                        value={reviewText}
+                        onChange={(e) => setReviewText(e.target.value)}
+                        placeholder="Describe your visit to this destination. Highlight transit options, costs, local foods, or safety tips..."
+                        className="w-full bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-805/85 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 rounded-2xl p-4 text-xs sm:text-sm text-slate-805 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none transition duration-200 resize-none"
+                      />
+                    </div>
+
+                    {submitError && (
+                      <p className="text-rose-500 text-xs font-bold">{submitError}</p>
+                    )}
+                    {submitSuccess && (
+                      <p className="text-emerald-500 text-xs font-bold">{submitSuccess}</p>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={submitLoading}
+                      className="w-full flex items-center justify-center gap-2 py-3 bg-indigo-650 hover:bg-indigo-755 text-white rounded-xl text-xs font-bold transition shadow-lg hover:shadow-indigo-500/20 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {submitLoading ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Send className="h-4 w-4" />
+                      )}
+                      {reviews.some(r => r.user === user._id) ? 'Update Review' : 'Submit Review'}
+                    </button>
+                  </form>
+                ) : (
+                  <div className="bg-slate-50/50 dark:bg-slate-955/20 border border-slate-150 dark:border-slate-805/85 rounded-3xl p-6 text-center space-y-3">
+                    <MessageSquare className="h-8 w-8 text-indigo-500 mx-auto" />
+                    <h3 className="text-sm font-bold text-slate-850 dark:text-slate-205">Share Your Experience</h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-455 font-semibold leading-relaxed">
+                      Join the TravelBharat community to rate and write reviews for this destination.
+                    </p>
+                    <Link 
+                      to={`/login?redirect=/destination/${destSlug}`}
+                      className="inline-block px-6 py-2.5 bg-indigo-650 hover:bg-indigo-755 text-white rounded-xl text-xs font-extrabold transition shadow-md hover:shadow-indigo-500/10 cursor-pointer"
+                    >
+                      Sign In to Review
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Reviews List */}
+            <div className="pt-6 border-t border-slate-100 dark:border-slate-800">
+              <h3 className="font-bold text-slate-805 dark:text-slate-200 text-sm mb-4">
+                User Reviews ({reviews.length})
+              </h3>
+              
+              {reviewsLoading ? (
+                <div className="flex justify-center items-center py-8">
+                  <Loader2 className="h-6 w-6 text-indigo-500 animate-spin" />
+                </div>
+              ) : reviews.length === 0 ? (
+                <p className="text-slate-400 text-xs font-semibold italic text-center py-6">
+                  No reviews submitted for this destination yet. Be the first to share your thoughts!
+                </p>
+              ) : (
+                <div className="divide-y divide-slate-100 dark:divide-slate-800 space-y-6">
+                  {reviews.map((rev) => (
+                    <div key={rev._id} className="pt-6 first:pt-0 flex gap-4 text-left">
+                      <div className="flex-shrink-0">
+                        {rev.userAvatar ? (
+                          <img 
+                            src={rev.userAvatar} 
+                            alt={rev.userName} 
+                            className="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700 animate-fadeIn" 
+                          />
+                        ) : (
+                          <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-950/40 border border-indigo-200/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm uppercase">
+                            {rev.userName ? rev.userName.charAt(0) : '?'}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="flex-grow space-y-1.5">
+                        <div className="flex justify-between items-start gap-4">
+                          <div>
+                            <h4 className="text-xs sm:text-sm font-bold text-slate-850 dark:text-slate-205">
+                              {rev.userName}
+                            </h4>
+                            <div className="flex items-center gap-1.5 mt-0.5">
+                              <div className="flex items-center gap-0.5">
+                                {[1, 2, 3, 4, 5].map((star) => (
+                                  <Star 
+                                    key={star}
+                                    className={`h-3 w-3 ${
+                                      rev.rating >= star 
+                                        ? 'fill-amber-500 text-amber-500' 
+                                        : 'text-slate-300 dark:text-slate-700'
+                                    }`}
+                                  />
+                                ))}
+                              </div>
+                              <span className="text-[10px] text-slate-400 font-bold">
+                                {new Date(rev.createdAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+                              </span>
+                            </div>
+                          </div>
+
+                          {user && (user._id === rev.user || user.role === 'admin') && (
+                            <button
+                              onClick={() => handleReviewDelete(rev._id)}
+                              className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-955/20 rounded-lg transition cursor-pointer"
+                              title="Delete Review"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </button>
+                          )}
+                        </div>
+
+                        <p className="text-slate-605 dark:text-slate-400 text-xs sm:text-sm font-medium leading-relaxed whitespace-pre-wrap">
+                          {rev.reviewText}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
 
           {/* Recommended similar list */}
           {similarPlaces.length > 0 && (

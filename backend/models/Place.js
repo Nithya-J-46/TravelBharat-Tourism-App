@@ -90,7 +90,9 @@ const placeSchema = new mongoose.Schema({
   tags: [{ type: String }],
   isHiddenGem: { type: Boolean, default: false },
   isTrending: { type: Boolean, default: false },
-  isWeekendGetaway: { type: Boolean, default: false }
+  isWeekendGetaway: { type: Boolean, default: false },
+  averageRating: { type: Number, default: 0 },
+  reviewCount: { type: Number, default: 0 }
 }, { timestamps: true });
 
 placeSchema.index({ name: 'text', description: 'text' });

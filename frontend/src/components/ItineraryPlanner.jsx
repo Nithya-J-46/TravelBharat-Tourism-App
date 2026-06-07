@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { jsPDF } from 'jspdf';
 import { useTheme } from '../context/ThemeContext';
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
 import L from 'leaflet';
@@ -410,9 +411,145 @@ const ItineraryPlanner = ({ places = [], title = "India", defaultDuration = 3 })
     }, 2800);
   };
 
-  // Trigger Print / PDF download
+  // Trigger PDF download
   const triggerPrint = () => {
-    window.print();
+    const doc = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    });
+
+    const slate900 = [30, 41, 59];
+    const slate600 = [71, 85, 105];
+
+    // Page 1 Header Banner
+    doc.setFillColor(...slate900);
+    doc.rect(0, 0, 210, 38, 'F');
+
+    // Title & Branding
+    doc.setTextColor(255, 255, 255);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(22);
+    doc.text("TravelBharat Itinerary", 15, 18);
+    
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9);
+    doc.text(`Generated on ${new Date().toLocaleDateString()} | Discover the Soul of India`, 15, 26);
+    doc.text("Plan online at: travelbharat.vercel.app", 15, 31);
+
+    // Section 1: Trip Overview
+    doc.setTextColor(...slate900);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14);
+    doc.text(`Destination: ${title}`, 15, 50);
+
+    doc.setDrawColor(226, 232, 240); // slate-200 border
+    doc.line(15, 54, 195, 54);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.text(`• Duration: ${duration} Days`, 15, 62);
+    doc.text(`• Traveler Category: ${travelerCount}`, 15, 68);
+    doc.text(`• Budget Tier: ${budgetTier}`, 15, 74);
+    doc.text(`• Travel Style: ${selectedStyle}`, 15, 80);
+    doc.text(`• Estimated Total Cost: INR ${totalCost.toLocaleString()}`, 15, 86);
+
+    // Section 2: Route & Transit info
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.text("Route & Transit Details", 115, 62);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.text(`• Total Distance: ~${totalDistance} km`, 115, 68);
+    doc.text(`• Est. Driving Time: ~${estimatedTravelTime} hrs`, 115, 74);
+    
+    const transitNote = days[0]?.transitOptimization || "Local transport options recommended.";
+    const splitTransit = doc.splitTextToSize(`• Route Info: ${transitNote}`, 80);
+    doc.text(splitTransit, 115, 80);
+
+    doc.line(15, 94, 195, 94);
+
+    // Section 3: Daily Timeline
+    let y = 104;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(13);
+    doc.text("Daily Schedule Breakdown", 15, y);
+    y += 8;
+
+    days.forEach((day) => {
+      // Check page break
+      if (y > 245) {
+        doc.addPage();
+        doc.setFillColor(30, 41, 59);
+        doc.rect(0, 0, 210, 15, 'F');
+        doc.setTextColor(255, 255, 255);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(9);
+        doc.text(`TravelBharat Itinerary: ${title} (${duration} Days Plan)`, 15, 9);
+        y = 28;
+      }
+
+      // Day separator block
+      doc.setFillColor(241, 245, 249);
+      doc.rect(15, y - 5, 180, 8, 'F');
+      
+      doc.setTextColor(...slate900);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10.5);
+      doc.text(`DAY ${day.dayIndex} - ${day.spotName}`, 18, y);
+      y += 8;
+
+      // Morning Activity
+      doc.setTextColor(...slate900);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(9);
+      doc.text("Morning Sightseeing:", 18, y);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(...slate600);
+      const morningSplit = doc.splitTextToSize(day.morningText, 140);
+      doc.text(morningSplit, 52, y);
+      y += Math.max(morningSplit.length * 4.2, 5);
+
+      // Lunch / Dining
+      if (y > 260) { doc.addPage(); doc.setFillColor(30, 41, 59); doc.rect(0, 0, 210, 15, 'F'); doc.setTextColor(255, 255, 255); doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.text(`TravelBharat Itinerary: ${title}`, 15, 9); y = 28; }
+      doc.setTextColor(...slate900);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(9);
+      doc.text("Lunch & Local Food:", 18, y);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(...slate600);
+      const diningText = `Dine at ${day.dining.restaurantName} (Specialty: ${day.dining.specialty}, Cost: ${day.dining.costForTwo})`;
+      const diningSplit = doc.splitTextToSize(diningText, 140);
+      doc.text(diningSplit, 52, y);
+      y += Math.max(diningSplit.length * 4.2, 5);
+
+      // Evening Activity
+      if (y > 260) { doc.addPage(); doc.setFillColor(30, 41, 59); doc.rect(0, 0, 210, 15, 'F'); doc.setTextColor(255, 255, 255); doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.text(`TravelBharat Itinerary: ${title}`, 15, 9); y = 28; }
+      doc.setTextColor(...slate900);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(9);
+      doc.text("Evening Activities:", 18, y);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(...slate600);
+      const eveningSplit = doc.splitTextToSize(day.eveningText, 140);
+      doc.text(eveningSplit, 52, y);
+      y += Math.max(eveningSplit.length * 4.2, 5);
+
+      // Hotel Stay
+      if (y > 260) { doc.addPage(); doc.setFillColor(30, 41, 59); doc.rect(0, 0, 210, 15, 'F'); doc.setTextColor(255, 255, 255); doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.text(`TravelBharat Itinerary: ${title}`, 15, 9); y = 28; }
+      doc.setTextColor(...slate900);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(9);
+      doc.text("Stay Recommendation:", 18, y);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(...slate600);
+      const hotelText = `${day.hotel.name} (Rating: ${day.hotel.rating} Stars, Price: ${day.hotel.priceRange})`;
+      const hotelSplit = doc.splitTextToSize(hotelText, 140);
+      doc.text(hotelSplit, 52, y);
+      y += Math.max(hotelSplit.length * 4.2, 8);
+    });
+
+    doc.save(`TravelBharat_Itinerary_${title.replace(/\s+/g, '_')}.pdf`);
   };
 
   // Compute percentage for dynamic progress bars

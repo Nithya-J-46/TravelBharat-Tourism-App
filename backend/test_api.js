@@ -56,7 +56,7 @@ async function run() {
   await testEndpoint('/api/places/suggestions?q=keral', 'Suggestions for "keral"');
   
   // Test 3: Get a single place detail by its slug
-  await testEndpoint('/api/places/slug/kerala-munnar-eravikulam-national-park', 'Place Detail by Slug');
+  await testEndpoint('/api/places/slug/kerala-munnar-munnar-tea-gardens', 'Place Detail by Slug');
 }
 
 run();

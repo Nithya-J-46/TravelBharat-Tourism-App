@@ -13,6 +13,7 @@ const cityRoutes = require('./routes/cities');
 const categoryRoutes = require('./routes/categories');
 const placeRoutes = require('./routes/places');
 const bulkImportRoutes = require('./routes/bulkImport');
+const reviewRoutes = require('./routes/reviews');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -56,6 +57,7 @@ app.use('/api/cities', cityRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/places/bulk-import', bulkImportRoutes);
 app.use('/api/places', placeRoutes);
+app.use('/api/reviews', reviewRoutes);
 
 // Base route
 app.get('/', (req, res) => {

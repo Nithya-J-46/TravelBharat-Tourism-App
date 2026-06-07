@@ -45,9 +45,11 @@ const PlaceCard = ({ place }) => {
   const cityName = place.city?.name || place.city || '';
   const categoryName = place.category?.name || place.category || 'Destination';
   
-  const ratingValue = place.ratingScores?.popularity 
-    ? place.ratingScores.popularity.toFixed(1) 
-    : '4.5';
+  const ratingValue = place.averageRating > 0
+    ? place.averageRating.toFixed(1)
+    : place.ratingScores?.popularity 
+      ? place.ratingScores.popularity.toFixed(1) 
+      : '4.5';
 
   const targetUrl = place.slug ? `/destination/${place.slug}` : `/place/${place._id}`;
 
