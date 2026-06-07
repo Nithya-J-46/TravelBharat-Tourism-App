@@ -116,10 +116,10 @@ const Dashboard = () => {
     setLoading(true);
     try {
       const [placesRes, statesRes, citiesRes, categoriesRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/places'),
-        axios.get('http://localhost:5000/api/states'),
-        axios.get('http://localhost:5000/api/cities'),
-        axios.get('http://localhost:5000/api/categories')
+        axios.get(`${window.API_BASE_URL}/api/places`),
+        axios.get(`${window.API_BASE_URL}/api/states`),
+        axios.get(`${window.API_BASE_URL}/api/cities`),
+        axios.get(`${window.API_BASE_URL}/api/categories`)
       ]);
       setPlaces(placesRes.data);
       setStates(statesRes.data);
@@ -164,7 +164,7 @@ const Dashboard = () => {
     if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
       return imagePath;
     }
-    return `http://localhost:5000${imagePath}`;
+    return `${window.API_BASE_URL}${imagePath}`;
   };
 
   // Auto-slug generator helper
@@ -199,7 +199,7 @@ const Dashboard = () => {
         }
       };
 
-      const res = await axios.post('http://localhost:5000/api/places/upload', formData, uploadHeaders);
+      const res = await axios.post(`${window.API_BASE_URL}/api/places/upload`, formData, uploadHeaders);
       
       if (modalType === 'place') {
         setFormPlace(prev => ({
@@ -230,7 +230,7 @@ const Dashboard = () => {
       else if (type === 'city') url = `/api/cities/${id}`;
       else if (type === 'category') url = `/api/categories/${id}`;
 
-      await axios.delete(`http://localhost:5000${url}`, authHeaders);
+      await axios.delete(`${window.API_BASE_URL}${url}`, authHeaders);
       setSuccessMsg(`${type.charAt(0).toUpperCase() + type.slice(1)} deleted successfully!`);
       loadAllData();
     } catch (err) {
@@ -245,7 +245,7 @@ const Dashboard = () => {
     setErrorMsg('');
 
     try {
-      let url = 'http://localhost:5000';
+      let url = `${window.API_BASE_URL}`;
       let data = {};
 
       if (modalType === 'place') {
@@ -337,7 +337,7 @@ const Dashboard = () => {
       }
 
       setImporting(true);
-      const res = await axios.post('http://localhost:5000/api/places/bulk-import', parsedData, authHeaders);
+      const res = await axios.post(`${window.API_BASE_URL}/api/places/bulk-import`, parsedData, authHeaders);
       setImportResults(res.data);
       setSuccessMsg('Bulk import completed!');
       loadAllData();

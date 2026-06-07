@@ -59,14 +59,14 @@ const PlaceDetail = () => {
     const fetchPlaceDetail = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:5000/api/places/slug/${destSlug}`);
+        const res = await axios.get(`${window.API_BASE_URL}/api/places/slug/${destSlug}`);
         setPlace(res.data);
         setActiveImageIndex(0);
         setFailedImages(new Set());
         
         // Fetch similar places in the same state
         if (res.data.state?._id) {
-          const similarRes = await axios.get(`http://localhost:5000/api/places?state=${res.data.state._id}`);
+          const similarRes = await axios.get(`${window.API_BASE_URL}/api/places?state=${res.data.state._id}`);
           const filtered = similarRes.data
             .filter(p => p._id !== res.data._id)
             .slice(0, 3);

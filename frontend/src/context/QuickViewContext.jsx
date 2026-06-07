@@ -74,13 +74,13 @@ export const QuickViewProvider = ({ children }) => {
       let res;
       if (placeObj) {
         if (placeObj.slug) {
-          res = await axios.get(`http://localhost:5000/api/places/slug/${placeObj.slug}`);
+          res = await axios.get(`${window.API_BASE_URL}/api/places/slug/${placeObj.slug}`);
         } else {
-          res = await axios.get(`http://localhost:5000/api/places/${placeObj._id}`);
+          res = await axios.get(`${window.API_BASE_URL}/api/places/${placeObj._id}`);
         }
         setQuickViewPlace(res.data);
       } else if (nameToSearch) {
-        res = await axios.get(`http://localhost:5000/api/places?search=${encodeURIComponent(nameToSearch)}`);
+        res = await axios.get(`${window.API_BASE_URL}/api/places?search=${encodeURIComponent(nameToSearch)}`);
         if (res.data && res.data.length > 0) {
           const matched = res.data.find(p => p.name.toLowerCase() === nameToSearch.toLowerCase()) || res.data[0];
           setQuickViewPlace(matched);
@@ -164,7 +164,7 @@ export const QuickViewProvider = ({ children }) => {
     if (path.startsWith('http://') || path.startsWith('https://')) {
       return path;
     }
-    return `http://localhost:5000${path}`;
+    return `${window.API_BASE_URL}${path}`;
   };
 
   const getPathUrl = (path) => {
@@ -174,7 +174,7 @@ export const QuickViewProvider = ({ children }) => {
     if (path.startsWith('http://') || path.startsWith('https://')) {
       return path;
     }
-    return `http://localhost:5000${path}`;
+    return `${window.API_BASE_URL}${path}`;
   };
 
   // Distance computation helper

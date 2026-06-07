@@ -97,49 +97,164 @@ const getFuzzyMatches = async (term) => {
 // GET search suggestions autocomplete
 router.get('/suggestions', async (req, res) => {
   try {
-    const { q } = req.query;
+    const { q, category } = req.query;
     if (!q || q.trim().length < 2) return res.json([]);
 
     const { stateIds, cityIds, categoryIds } = await getFuzzyMatches(q);
     const regexSearch = { $regex: q, $options: 'i' };
 
-    // Find matching places, states, and cities including fuzzy spelling corrections
+    let placeQuery = {
+      $or: [
+        { name: regexSearch }, 
+        { category: { $in: categoryIds } }
+      ]
+    };
+
+    let stateQuery = {
+      $or: [
+        { name: regexSearch }, 
+        { _id: { $in: stateIds } }
+      ]
+    };
+
+    let cityQuery = {
+      $or: [
+        { name: regexSearch }, 
+        { _id: { $in: cityIds } }
+      ]
+    };
+
+    // Apply category filters
+    if (category) {
+      const catLower = category.toLowerCase().trim();
+      if (catLower === 'states') {
+        const states = await State.find(stateQuery).limit(6).select('name slug bannerImage');
+        const suggestions = states.map(s => ({
+          text: s.name,
+          type: 'State',
+          slug: s.slug,
+          path: `/state/${s.slug}`,
+          thumbnail: s.bannerImage || null,
+          stateName: 'State/UT',
+          categoryName: 'Region',
+          rating: 4.8
+        }));
+        return res.json(suggestions);
+      } else if (catLower === 'cities') {
+        const cities = await City.find(cityQuery).populate('state', 'name').limit(6).select('name state');
+        const suggestions = cities.map(c => ({
+          text: c.name,
+          type: 'City',
+          path: `/explore?search=${c.name}`,
+          thumbnail: null,
+          stateName: c.state?.name || '',
+          categoryName: 'City',
+          rating: 4.6
+        }));
+        return res.json(suggestions);
+      } else {
+        if (catLower === 'heritage sites' || catLower === 'heritage') {
+          const heritageCat = await Category.findOne({ name: 'Heritage' });
+          if (heritageCat) placeQuery = { name: regexSearch, category: heritageCat._id };
+        } else if (catLower === 'beaches') {
+          const natureCat = await Category.findOne({ name: 'Nature' });
+          const catIds = natureCat ? [natureCat._id] : [];
+          placeQuery = {
+            name: regexSearch,
+            $or: [
+              { tags: { $regex: 'beach', $options: 'i' } },
+              { category: { $in: catIds } }
+            ]
+          };
+        } else if (catLower === 'hill stations') {
+          placeQuery = {
+            name: regexSearch,
+            tags: { $regex: 'hill station', $options: 'i' }
+          };
+        } else if (catLower === 'temples') {
+          const religiousCat = await Category.findOne({ name: 'Religious' });
+          const catIds = religiousCat ? [religiousCat._id] : [];
+          placeQuery = {
+            name: regexSearch,
+            $or: [
+              { tags: { $regex: 'temple', $options: 'i' } },
+              { category: { $in: catIds } }
+            ]
+          };
+        } else if (catLower === 'wildlife') {
+          const wildlifeCat = await Category.findOne({ name: 'Wildlife' });
+          if (wildlifeCat) placeQuery = { name: regexSearch, category: wildlifeCat._id };
+        }
+
+        const places = await Place.find(placeQuery)
+          .populate('state', 'name')
+          .populate('category', 'name')
+          .limit(6)
+          .select('name slug images state category ratingScores');
+
+        const suggestions = places.map(p => ({
+          text: p.name,
+          type: 'Destination',
+          slug: p.slug,
+          path: `/destination/${p.slug}`,
+          thumbnail: p.images && p.images.length > 0 ? p.images[0] : null,
+          stateName: p.state?.name || '',
+          categoryName: p.category?.name || '',
+          rating: p.ratingScores?.popularity || 4.5
+        }));
+        return res.json(suggestions);
+      }
+    }
+
+    // Default Mix search
     const [places, states, cities] = await Promise.all([
-      Place.find({ 
-        $or: [
-          { name: regexSearch }, 
-          { category: { $in: categoryIds } }
-        ] 
-      }).limit(5).select('name slug'),
-      State.find({ 
-        $or: [
-          { name: regexSearch }, 
-          { _id: { $in: stateIds } }
-        ] 
-      }).limit(3).select('name slug'),
-      City.find({ 
-        $or: [
-          { name: regexSearch }, 
-          { _id: { $in: cityIds } }
-        ] 
-      }).populate('state', 'name').limit(3).select('name state')
+      Place.find(placeQuery)
+        .populate('state', 'name')
+        .populate('category', 'name')
+        .limit(4)
+        .select('name slug images state category ratingScores'),
+      State.find(stateQuery).limit(2).select('name slug bannerImage'),
+      City.find(cityQuery).populate('state', 'name').limit(2).select('name state')
     ]);
 
     const suggestions = [];
-    
-    // Add states
+
     states.forEach(s => {
-      suggestions.push({ text: s.name, type: 'State', slug: s.slug, path: `/state/${s.slug}` });
+      suggestions.push({
+        text: s.name,
+        type: 'State',
+        slug: s.slug,
+        path: `/state/${s.slug}`,
+        thumbnail: s.bannerImage || null,
+        stateName: 'State/UT',
+        categoryName: 'Region',
+        rating: 4.8
+      });
     });
 
-    // Add cities
     cities.forEach(c => {
-      suggestions.push({ text: `${c.name} (${c.state?.name || ''})`, type: 'City', path: `/explore?search=${c.name}` });
+      suggestions.push({
+        text: c.name,
+        type: 'City',
+        path: `/explore?search=${c.name}`,
+        thumbnail: null,
+        stateName: c.state?.name || '',
+        categoryName: 'City',
+        rating: 4.6
+      });
     });
 
-    // Add places
     places.forEach(p => {
-      suggestions.push({ text: p.name, type: 'Destination', slug: p.slug, path: `/destination/${p.slug}` });
+      suggestions.push({
+        text: p.name,
+        type: 'Destination',
+        slug: p.slug,
+        path: `/destination/${p.slug}`,
+        thumbnail: p.images && p.images.length > 0 ? p.images[0] : null,
+        stateName: p.state?.name || '',
+        categoryName: p.category?.name || '',
+        rating: p.ratingScores?.popularity || 4.5
+      });
     });
 
     res.json(suggestions);

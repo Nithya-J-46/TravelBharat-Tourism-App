@@ -34,15 +34,15 @@ const Navbar = () => {
 
   const linkClass = (path) => {
     const baseClass = "px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300";
-    const activeClass = "text-indigo-655 bg-indigo-50 dark:text-indigo-400 dark:bg-indigo-950/30";
-    const inactiveClass = "text-slate-600 dark:text-slate-405 hover:text-indigo-655 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-900/40";
+    const activeClass = "text-indigo-600 bg-indigo-50 dark:text-indigo-400 dark:bg-indigo-950/30";
+    const inactiveClass = "text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-900/40";
     return location.pathname === path ? `${baseClass} ${activeClass}` : `${baseClass} ${inactiveClass}`;
   };
 
   const mobileLinkClass = (path) => {
     const baseClass = "block px-4 py-2.5 rounded-xl text-base font-bold transition-all duration-300";
-    const activeClass = "text-indigo-655 bg-indigo-50 dark:text-indigo-400 dark:bg-indigo-950/30";
-    const inactiveClass = "text-slate-600 dark:text-slate-400 hover:text-indigo-655 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-900/40";
+    const activeClass = "text-indigo-600 bg-indigo-50 dark:text-indigo-400 dark:bg-indigo-950/30";
+    const inactiveClass = "text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-900/40";
     return location.pathname === path ? `${baseClass} ${activeClass}` : `${baseClass} ${inactiveClass}`;
   };
 
@@ -90,6 +90,15 @@ const Navbar = () => {
                     Wishlist
                   </span>
                 </Link>
+
+                {user.role === 'admin' && (
+                  <Link to="/admin" className={linkClass('/admin')}>
+                    <span className="flex items-center">
+                      <ShieldCheck className="h-4 w-4 mr-1.5" />
+                      Admin
+                    </span>
+                  </Link>
+                )}
               </>
             )}
 
@@ -102,7 +111,7 @@ const Navbar = () => {
                 >
                   {user.avatar ? (
                     <img
-                      src={`http://localhost:5000${user.avatar}`}
+                      src={`${window.API_BASE_URL}${user.avatar}`}
                       alt={user.name}
                       className="h-6 w-6 rounded-full object-cover border border-indigo-200"
                       onError={(e) => {
@@ -137,6 +146,24 @@ const Navbar = () => {
                     >
                       <UserIcon className="h-4 w-4 mr-2.5 text-slate-400" />
                       My Profile
+                    </Link>
+
+                    <Link
+                      to="/my-trips"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="flex items-center px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900/60 font-medium transition-colors"
+                    >
+                      <Briefcase className="h-4 w-4 mr-2.5 text-slate-400" />
+                      My Trips
+                    </Link>
+
+                    <Link
+                      to="/wishlist"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="flex items-center px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900/60 font-medium transition-colors"
+                    >
+                      <Heart className="h-4 w-4 mr-2.5 text-slate-400" />
+                      Wishlist
                     </Link>
 
                     <Link

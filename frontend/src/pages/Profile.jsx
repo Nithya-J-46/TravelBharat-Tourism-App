@@ -168,7 +168,7 @@ const Profile = () => {
                 
                 {user?.avatar ? (
                   <img
-                    src={`http://localhost:5000${user.avatar}`}
+                    src={`${window.API_BASE_URL}${user.avatar}`}
                     alt={user.name}
                     className="h-full w-full object-cover"
                     onError={(e) => {

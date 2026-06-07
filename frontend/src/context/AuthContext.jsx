@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
   const [itineraries, setItineraries] = useState([]);
   const [preferences, setPreferences] = useState({ travel: [], budget: 'Medium' });
 
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = `${window.API_BASE_URL}/api`;
 
   // Helper to get auth headers
   const getAuthHeaders = (tempToken = null) => {
@@ -103,8 +103,12 @@ export const AuthProvider = ({ children }) => {
           }
         } catch (error) {
           console.error('Auth initialization error:', error);
-          localStorage.removeItem('token');
-          sessionStorage.removeItem('token');
+          if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+            localStorage.removeItem('token');
+            sessionStorage.removeItem('token');
+            setToken(null);
+            setUser(null);
+          }
         }
       }
       setLoading(false);

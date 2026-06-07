@@ -33,6 +33,12 @@ const seed = async () => {
     await State.deleteMany({});
     await Category.deleteMany({});
     await User.deleteMany({});
+    try {
+      await User.collection.dropIndexes();
+      console.log('Dropped all indexes on User collection.');
+    } catch (e) {
+      console.log('No indexes to drop on User collection.');
+    }
     console.log('Cleared database collections.');
 
     // Seed Categories

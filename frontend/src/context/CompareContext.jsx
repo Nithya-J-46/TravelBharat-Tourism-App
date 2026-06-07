@@ -72,7 +72,7 @@ export const CompareProvider = ({ children }) => {
     if (!place || !place.images || place.images.length === 0) return '';
     const img = place.images[0];
     if (img.startsWith('http://') || img.startsWith('https://')) return img;
-    return `http://localhost:5000${img}`;
+    return `${window.API_BASE_URL}${img}`;
   };
 
   // Map compared places to standard dynamic schemas

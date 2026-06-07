@@ -140,7 +140,7 @@ const IndiaMap = () => {
 
   useEffect(() => {
     // 1. Fetch States data from backend
-    axios.get('http://localhost:5000/api/states')
+    axios.get(`${window.API_BASE_URL}/api/states`)
       .then(res => setDbStates(res.data))
       .catch(err => console.error('Error fetching states:', err));
 
@@ -204,7 +204,7 @@ const IndiaMap = () => {
       return;
     }
     const delayDebounce = setTimeout(() => {
-      axios.get(`http://localhost:5000/api/places/suggestions?q=${encodeURIComponent(searchQuery)}`)
+      axios.get(`${window.API_BASE_URL}/api/places/suggestions?q=${encodeURIComponent(searchQuery)}`)
         .then(res => setSuggestions(res.data))
         .catch(err => console.error(err));
     }, 200);
@@ -219,7 +219,7 @@ const IndiaMap = () => {
       setSelectedPin(null);
       return;
     }
-    axios.get(`http://localhost:5000/api/places?state=${selectedState.slug}`)
+    axios.get(`${window.API_BASE_URL}/api/places?state=${selectedState.slug}`)
       .then(res => {
         // filter destinations that have valid coordinates
         const coordsPlaces = res.data.filter(p => p.coordinates && p.coordinates.latitude && p.coordinates.longitude);
@@ -279,7 +279,7 @@ const IndiaMap = () => {
       if (mapItem) handleStateSelect(mapItem);
     } else if (sug.type === 'Destination' || sug.type === 'City') {
       // Find the corresponding state
-      axios.get(`http://localhost:5000/api/places/slug/${sug.slug || sug.text.toLowerCase().split(' ').join('-')}`)
+      axios.get(`${window.API_BASE_URL}/api/places/slug/${sug.slug || sug.text.toLowerCase().split(' ').join('-')}`)
         .then(res => {
           const place = res.data;
           if (place && place.state) {

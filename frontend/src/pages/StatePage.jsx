@@ -150,12 +150,12 @@ const StatePage = () => {
     const fetchStateData = async () => {
       setLoading(true);
       try {
-        const stateRes = await axios.get(`http://localhost:5000/api/states/slug/${stateSlug}`);
+        const stateRes = await axios.get(`${window.API_BASE_URL}/api/states/slug/${stateSlug}`);
         setStateInfo(stateRes.data);
         
         const [citiesRes, categoriesRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/cities?state=${stateRes.data._id}`),
-          axios.get('http://localhost:5000/api/categories')
+          axios.get(`${window.API_BASE_URL}/api/cities?state=${stateRes.data._id}`),
+          axios.get(`${window.API_BASE_URL}/api/categories`)
         ]);
         setCities(citiesRes.data);
         setCategories(categoriesRes.data);
@@ -174,7 +174,7 @@ const StatePage = () => {
       clearImageRegistry();
       setPlacesLoading(true);
       try {
-        let url = `http://localhost:5000/api/places?state=${stateInfo._id}`;
+        let url = `${window.API_BASE_URL}/api/places?state=${stateInfo._id}`;
         if (selectedCity) url += `&city=${selectedCity}`;
         if (selectedCategory) url += `&category=${selectedCategory}`;
         

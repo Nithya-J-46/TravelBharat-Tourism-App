@@ -26,23 +26,61 @@ const Explore = () => {
   const searchParams = new URLSearchParams(location.search);
   const initialSearch = searchParams.get('search') || '';
   const [searchQuery, setSearchQuery] = useState(initialSearch);
+  const [recType, setRecType] = useState('');
+  const [plannerOpen, setPlannerOpen] = useState(false);
 
   // Fetch unique filter options
   useEffect(() => {
     const loadFiltersData = async () => {
       try {
         const [statesRes, categoriesRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/states'),
-          axios.get('http://localhost:5000/api/categories')
+          axios.get(`${window.API_BASE_URL}/api/states`),
+          axios.get(`${window.API_BASE_URL}/api/categories`)
         ]);
         setStates(statesRes.data);
         setCategories(categoriesRes.data);
+
+        // Parse query params
+        const params = new URLSearchParams(location.search);
+        
+        // Category param
+        const catParam = params.get('category');
+        if (catParam) {
+          const matched = categoriesRes.data.find(c => 
+            c.slug === catParam.toLowerCase() || 
+            c.name.toLowerCase() === catParam.toLowerCase()
+          );
+          if (matched) setSelectedCategory(matched._id);
+        }
+
+        // State param
+        const stateParam = params.get('state');
+        if (stateParam) {
+          const matched = statesRes.data.find(s => 
+            s.slug === stateParam.toLowerCase() || 
+            s.name.toLowerCase() === stateParam.toLowerCase()
+          );
+          if (matched) setSelectedState(matched._id);
+        }
+
+        // Filter param (trending/weekend/gems)
+        const filterParam = params.get('filter');
+        if (filterParam) {
+          if (filterParam === 'trending') setRecType('trending');
+          else if (filterParam === 'hidden-gems') setRecType('hidden-gems');
+          else if (filterParam === 'weekend') setRecType('weekend');
+        }
+
+        // Planner param
+        if (params.get('planner') === 'true') {
+          setPlannerOpen(true);
+        }
       } catch (err) {
         console.error('Error loading filter options:', err);
       }
     };
     loadFiltersData();
-  }, []);
+  }, [location.search]);
 
   // Fetch cities when state changes (dynamic city dropdown)
   useEffect(() => {
@@ -53,7 +91,7 @@ const Explore = () => {
         return;
       }
       try {
-        const res = await axios.get(`http://localhost:5000/api/cities?state=${selectedState}`);
+        const res = await axios.get(`${window.API_BASE_URL}/api/cities?state=${selectedState}`);
         setCities(res.data);
         if (!res.data.find(c => c._id === selectedCity)) {
           setSelectedCity('');
@@ -68,17 +106,18 @@ const Explore = () => {
   // Trigger search on filter change
   useEffect(() => {
     fetchFilteredPlaces();
-  }, [selectedState, selectedCity, selectedCategory]);
+  }, [selectedState, selectedCity, selectedCategory, recType]);
 
   const fetchFilteredPlaces = async () => {
     clearImageRegistry();
     setLoading(true);
     try {
-      let url = 'http://localhost:5000/api/places?';
+      let url = `${window.API_BASE_URL}/api/places?`;
       if (selectedState) url += `state=${selectedState}&`;
       if (selectedCity) url += `city=${selectedCity}&`;
       if (selectedCategory) url += `category=${selectedCategory}&`;
       if (searchQuery) url += `search=${encodeURIComponent(searchQuery)}&`;
+      if (recType) url += `recommendationType=${recType}&`;
       
       const res = await axios.get(url);
       setPlaces(res.data);
@@ -131,7 +170,7 @@ const Explore = () => {
     setTimeout(async () => {
       setLoading(true);
       try {
-        const res = await axios.get('http://localhost:5000/api/places');
+        const res = await axios.get(`${window.API_BASE_URL}/api/places`);
         setPlaces(res.data);
         setFilteredPlaces(res.data);
       } catch (err) {
@@ -322,7 +361,7 @@ const Explore = () => {
               {/* Collapsible Interactive Trip Planner Panel */}
               {(selectedCity || selectedCategory || selectedState) && filteredPlaces.length > 0 && (
                 <div className="mb-8 bg-slate-50 dark:bg-slate-900/40 rounded-3xl p-1 border border-slate-200/50 dark:border-slate-800/50">
-                  <details className="group [&_summary::-webkit-details-marker]:hidden">
+                  <details open={plannerOpen} className="group [&_summary::-webkit-details-marker]:hidden" onToggle={(e) => setPlannerOpen(e.currentTarget.open)}>
                     <summary className="flex items-center justify-between p-6 cursor-pointer select-none">
                       <div className="flex items-center gap-3">
                         <div className="bg-indigo-100 dark:bg-indigo-950 p-2.5 rounded-2xl text-indigo-600 dark:text-indigo-400">

@@ -17,8 +17,19 @@ const bulkImportRoutes = require('./routes/bulkImport');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+// Request logging middleware
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
+
+// Configure CORS for production and local environments
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || '*',
+  credentials: true
+};
+app.use(cors(corsOptions));
+
 // Set payload limits high enough for bulk imports
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
@@ -49,6 +60,15 @@ app.use('/api/places', placeRoutes);
 // Base route
 app.get('/', (req, res) => {
   res.send('TravelBharat API is running...');
+});
+
+// Global Error Handling Middleware
+app.use((err, req, res, next) => {
+  console.error('[Error Handler]', err.stack || err);
+  res.status(err.status || 500).json({
+    message: err.message || 'Internal Server Error',
+    error: process.env.NODE_ENV === 'production' ? {} : err
+  });
 });
 
 app.listen(PORT, () => {

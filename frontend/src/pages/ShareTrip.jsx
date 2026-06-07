@@ -76,10 +76,10 @@ const ShareTrip = () => {
     const state = trip.stateName;
 
     if (dest && destinationImages[dest] && destinationImages[dest].length > 0) {
-      return `https://images.unsplash.com/photo-${destinationImages[dest][0]}?auto=format&fit=crop&w=1200&q=80`;
+      return destinationImages[dest][0];
     }
     if (state && destinationImages[state] && destinationImages[state].length > 0) {
-      return `https://images.unsplash.com/photo-${destinationImages[state][0]}?auto=format&fit=crop&w=1200&q=80`;
+      return destinationImages[state][0];
     }
     return 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80'; // Taj Mahal default
   };

@@ -4,14 +4,18 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const { verifyToken, JWT_SECRET } = require('../middleware/auth');
+const rateLimiter = require('../middleware/rateLimiter');
+
+// Rate limiter for authentication routes: max 15 requests per 15 minutes
+const authLimiter = rateLimiter(15, 15 * 60 * 1000);
 
 // POST Register
-router.post('/register', async (req, res) => {
+router.post('/register', authLimiter, async (req, res) => {
   try {
     const { name, email, password, mobile } = req.body;
 
     if (!name || !email || !password) {
-      return res.status(400).json({ message: 'Name, email, and password are required' });
+      return res.status(400).json({ message: 'Please fill all required fields' });
     }
 
     // Email validation
@@ -28,7 +32,7 @@ router.post('/register', async (req, res) => {
     const emailLower = email.toLowerCase();
     const existingUser = await User.findOne({ email: emailLower });
     if (existingUser) {
-      return res.status(400).json({ message: 'An account with this email already exists' });
+      return res.status(400).json({ message: 'Email already registered' });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -68,12 +72,19 @@ router.post('/register', async (req, res) => {
       }
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    if (error.code === 11000) {
+      const field = Object.keys(error.keyPattern || {})[0];
+      if (field === 'email') {
+        return res.status(400).json({ message: 'Email already registered' });
+      }
+      return res.status(400).json({ message: `${field.charAt(0).toUpperCase() + field.slice(1)} already taken` });
+    }
+    res.status(500).json({ message: 'Server error. Please try again later.' });
   }
 });
 
 // POST Login (Handles Email and legacy Username)
-router.post('/login', async (req, res) => {
+router.post('/login', authLimiter, async (req, res) => {
   try {
     const { email, username, password } = req.body;
     const identifier = email || username;

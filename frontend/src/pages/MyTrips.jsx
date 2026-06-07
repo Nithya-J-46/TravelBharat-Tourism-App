@@ -420,10 +420,10 @@ const MyTrips = ({ initialTab = 'trips' }) => {
     const state = trip.stateName;
 
     if (dest && destinationImages[dest] && destinationImages[dest].length > 0) {
-      return `https://images.unsplash.com/photo-${destinationImages[dest][0]}?auto=format&fit=crop&w=600&q=80`;
+      return destinationImages[dest][0];
     }
     if (state && destinationImages[state] && destinationImages[state].length > 0) {
-      return `https://images.unsplash.com/photo-${destinationImages[state][0]}?auto=format&fit=crop&w=600&q=80`;
+      return destinationImages[state][0];
     }
     // Search substring match
     const matchedKey = Object.keys(destinationImages).find(k => 
@@ -431,7 +431,7 @@ const MyTrips = ({ initialTab = 'trips' }) => {
       (state && k.toLowerCase().includes(state.toLowerCase()))
     );
     if (matchedKey && destinationImages[matchedKey].length > 0) {
-      return `https://images.unsplash.com/photo-${destinationImages[matchedKey][0]}?auto=format&fit=crop&w=600&q=80`;
+      return destinationImages[matchedKey][0];
     }
     return 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=600&q=80'; // Taj Mahal default
   };
@@ -743,7 +743,7 @@ const MyTrips = ({ initialTab = 'trips' }) => {
                       : '4.5';
                     const allowedImages = place.images || [];
                     const imgUrl = allowedImages[0] 
-                      ? (allowedImages[0].startsWith('http') ? allowedImages[0] : `http://localhost:5000${allowedImages[0]}`)
+                      ? (allowedImages[0].startsWith('http') ? allowedImages[0] : `${window.API_BASE_URL}${allowedImages[0]}`)
                       : '';
                     return (
                       <motion.div 

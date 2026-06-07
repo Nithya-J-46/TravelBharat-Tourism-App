@@ -594,8 +594,8 @@ const Chatbot = () => {
     const loadBotData = async () => {
       try {
         const [placesRes, statesRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/places'),
-          axios.get('http://localhost:5000/api/states')
+          axios.get(`${window.API_BASE_URL}/api/places`),
+          axios.get(`${window.API_BASE_URL}/api/states`)
         ]);
         setAllPlaces(placesRes.data);
         setAllStates(statesRes.data);

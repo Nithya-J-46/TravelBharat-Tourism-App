@@ -32,7 +32,7 @@ const PlaceCard = ({ place }) => {
     if (path.startsWith('http://') || path.startsWith('https://')) {
       return path;
     }
-    return `http://localhost:5000${path}`;
+    return `${window.API_BASE_URL}${path}`;
   };
 
   const handleImageError = () => {
