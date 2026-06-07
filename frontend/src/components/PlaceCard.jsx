@@ -1,57 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { MapPin, Star, Calendar, ArrowRight, Heart } from 'lucide-react';
 import SafeImage from './SafeImage';
 import { useQuickView } from '../context/QuickViewContext';
 import { useCompare } from '../context/CompareContext';
+import { useAuth } from '../context/AuthContext';
 
 const PlaceCard = ({ place }) => {
   const [imageIndex, setImageIndex] = useState(0);
-  const [isWishlisted, setIsWishlisted] = useState(false);
   const { openQuickView } = useQuickView();
   const { toggleCompare, isComparing } = useCompare();
+  const { user, wishlist, toggleWishlist } = useAuth();
 
   const isAddedToCompare = isComparing(place._id);
+  const isWishlisted = wishlist.some(item => item._id === place._id);
 
-  useEffect(() => {
-    const wishlist = localStorage.getItem('travelbharat_wishlist');
-    if (wishlist) {
-      try {
-        const parsed = JSON.parse(wishlist);
-        setIsWishlisted(parsed.some(item => item._id === place._id));
-      } catch (e) {}
+  const handleWishlistClick = (e) => {
+    e.stopPropagation();
+    if (!user) {
+      if (window.confirm("Please login or create an account to save places to your wishlist. Would you like to go to the login page now?")) {
+        window.location.href = "/login";
+      }
+      return;
     }
-  }, [place._id]);
-
-  const toggleWishlist = () => {
-    const savedWishlist = localStorage.getItem('travelbharat_wishlist');
-    let list = [];
-    if (savedWishlist) {
-      try {
-        list = JSON.parse(savedWishlist);
-      } catch (e) {}
-    }
-
-    const index = list.findIndex(item => item._id === place._id);
-    if (index > -1) {
-      list.splice(index, 1);
-      setIsWishlisted(false);
-    } else {
-      list.push({
-        _id: place._id,
-        name: place.name,
-        slug: place.slug,
-        images: place.images,
-        city: place.city,
-        state: place.state,
-        bestTimeToVisit: place.bestTimeToVisit,
-        entryFees: place.entryFees,
-        category: place.category,
-        ratingScores: place.ratingScores
-      });
-      setIsWishlisted(true);
-    }
-    localStorage.setItem('travelbharat_wishlist', JSON.stringify(list));
-    window.dispatchEvent(new Event('wishlistChanged'));
+    toggleWishlist(place);
   };
 
   const getImageUrl = (index) => {
@@ -111,10 +82,7 @@ const PlaceCard = ({ place }) => {
 
         {/* Floating Heart Toggle Overlay */}
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            toggleWishlist();
-          }}
+          onClick={handleWishlistClick}
           className="absolute bottom-4 right-4 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-2 rounded-full shadow-md border border-white/20 hover:scale-110 active:scale-95 transition cursor-pointer"
           aria-label="Toggle Wishlist"
         >

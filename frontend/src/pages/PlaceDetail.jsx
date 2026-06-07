@@ -18,6 +18,7 @@ import WeatherWidget from '../components/WeatherWidget';
 import TripBudgetCalculator from '../components/TripBudgetCalculator';
 import SmartRoutePlanner from '../components/SmartRoutePlanner';
 import { useQuickView } from '../context/QuickViewContext';
+import { useAuth } from '../context/AuthContext';
 
 const PlaceDetail = () => {
   const { destSlug } = useParams();
@@ -38,52 +39,18 @@ const PlaceDetail = () => {
   // FAQs Accordion State
   const [faqOpen, setFaqOpen] = useState(0);
 
-  const [isWishlisted, setIsWishlisted] = useState(false);
+  const { user, wishlist, toggleWishlist } = useAuth();
+  const isWishlisted = place ? wishlist.some(item => item._id === place._id) : false;
 
-  // Sync wishlist state when place loaded
-  useEffect(() => {
-    if (place) {
-      const wishlist = localStorage.getItem('travelbharat_wishlist');
-      if (wishlist) {
-        try {
-          const parsed = JSON.parse(wishlist);
-          setIsWishlisted(parsed.some(item => item._id === place._id));
-        } catch (e) {}
-      }
-    }
-  }, [place]);
-
-  const toggleWishlist = () => {
+  const handleWishlistClick = () => {
     if (!place) return;
-    const savedWishlist = localStorage.getItem('travelbharat_wishlist');
-    let list = [];
-    if (savedWishlist) {
-      try {
-        list = JSON.parse(savedWishlist);
-      } catch (e) {}
+    if (!user) {
+      if (window.confirm("Please login or create an account to save places to your wishlist. Would you like to go to the login page now?")) {
+        window.location.href = "/login";
+      }
+      return;
     }
-
-    const index = list.findIndex(item => item._id === place._id);
-    if (index > -1) {
-      list.splice(index, 1);
-      setIsWishlisted(false);
-    } else {
-      list.push({
-        _id: place._id,
-        name: place.name,
-        slug: place.slug,
-        images: place.images,
-        city: place.city,
-        state: place.state,
-        bestTimeToVisit: place.bestTimeToVisit,
-        entryFees: place.entryFees,
-        category: place.category,
-        ratingScores: place.ratingScores
-      });
-      setIsWishlisted(true);
-    }
-    localStorage.setItem('travelbharat_wishlist', JSON.stringify(list));
-    window.dispatchEvent(new Event('wishlistChanged'));
+    toggleWishlist(place);
   };
 
   // Fetch place by slug
@@ -261,7 +228,7 @@ const PlaceDetail = () => {
                 {place.name}
               </h1>
               <button
-                onClick={toggleWishlist}
+                onClick={handleWishlistClick}
                 className={`inline-flex items-center gap-1.5 font-bold py-2.5 px-4 rounded-xl text-xs shadow-md transition cursor-pointer select-none border ${
                   isWishlisted 
                     ? 'bg-rose-50 border-rose-200 text-rose-600 dark:bg-rose-950/20 dark:border-rose-900/30' 

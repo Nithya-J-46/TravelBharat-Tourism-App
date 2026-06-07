@@ -7,7 +7,7 @@ const Place = require('../models/Place');
 const State = require('../models/State');
 const City = require('../models/City');
 const Category = require('../models/Category');
-const { verifyToken } = require('../middleware/auth');
+const { verifyToken, isAdmin } = require('../middleware/auth');
 
 // Multer Storage Configuration
 const storage = multer.diskStorage({
@@ -280,7 +280,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST new place (Admin)
-router.post('/', verifyToken, async (req, res) => {
+router.post('/', verifyToken, isAdmin, async (req, res) => {
   try {
     const { 
       name, slug, state, city, category, description, history,
@@ -321,7 +321,7 @@ router.post('/', verifyToken, async (req, res) => {
 });
 
 // PUT update place (Admin)
-router.put('/:id', verifyToken, async (req, res) => {
+router.put('/:id', verifyToken, isAdmin, async (req, res) => {
   try {
     if (req.body.slug) req.body.slug = req.body.slug.toLowerCase();
     const updatedPlace = await Place.findByIdAndUpdate(
@@ -337,7 +337,7 @@ router.put('/:id', verifyToken, async (req, res) => {
 });
 
 // DELETE place (Admin)
-router.delete('/:id', verifyToken, async (req, res) => {
+router.delete('/:id', verifyToken, isAdmin, async (req, res) => {
   try {
     const deletedPlace = await Place.findByIdAndDelete(req.params.id);
     if (!deletedPlace) return res.status(404).json({ message: 'Place not found' });
@@ -348,7 +348,7 @@ router.delete('/:id', verifyToken, async (req, res) => {
 });
 
 // POST upload image (Admin)
-router.post('/upload', verifyToken, upload.single('image'), (req, res) => {
+router.post('/upload', verifyToken, isAdmin, upload.single('image'), (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ message: 'No file uploaded.' });

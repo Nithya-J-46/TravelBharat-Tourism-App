@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from './AuthContext';
 import { 
   Star, MapPin, Calendar, Clock, Coins, Compass, Heart, Plus, 
   ExternalLink, X, Loader2, Info, Lightbulb, ChevronLeft, ChevronRight
@@ -20,6 +21,7 @@ export const useQuickView = () => {
 };
 
 export const QuickViewProvider = ({ children }) => {
+  const { user, wishlist, toggleWishlist: toggleWishlistContext } = useAuth();
   const [quickViewPlace, setQuickViewPlace] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -43,20 +45,10 @@ export const QuickViewProvider = ({ children }) => {
       setFailedImages(new Set());
       setIsFullscreenOpen(false);
       
-      const savedWishlist = localStorage.getItem('travelbharat_wishlist');
-      if (savedWishlist) {
-        try {
-          const list = JSON.parse(savedWishlist);
-          const isSaved = list.some(item => item._id === quickViewPlace._id);
-          setWishlisted(isSaved);
-        } catch (e) {
-          console.error(e);
-        }
-      } else {
-        setWishlisted(false);
-      }
+      const isSaved = wishlist.some(item => item._id === quickViewPlace._id);
+      setWishlisted(isSaved);
     }
-  }, [quickViewPlace]);
+  }, [quickViewPlace, wishlist]);
 
   const openQuickView = async (placeInput) => {
     setLoading(true);
@@ -113,35 +105,17 @@ export const QuickViewProvider = ({ children }) => {
 
   const toggleWishlist = () => {
     if (!quickViewPlace) return;
-    const savedWishlist = localStorage.getItem('travelbharat_wishlist');
-    let list = [];
-    if (savedWishlist) {
-      try {
-        list = JSON.parse(savedWishlist);
-      } catch (e) {
-        console.error(e);
+    if (!user) {
+      if (window.confirm("Please login or create an account to save places to your wishlist. Would you like to go to the login page now?")) {
+        window.location.href = "/login";
+        closeQuickView();
       }
+      return;
     }
-
-    const index = list.findIndex(item => item._id === quickViewPlace._id);
-    if (index > -1) {
-      list.splice(index, 1);
-      setWishlisted(false);
-      showTemporaryMessage('Removed from Saved Wishlist');
-    } else {
-      list.push({
-        _id: quickViewPlace._id,
-        name: quickViewPlace.name,
-        slug: quickViewPlace.slug,
-        images: quickViewPlace.images,
-        city: quickViewPlace.city,
-        state: quickViewPlace.state
-      });
-      setWishlisted(true);
-      showTemporaryMessage('Saved to Wishlist!');
-    }
-    localStorage.setItem('travelbharat_wishlist', JSON.stringify(list));
-    window.dispatchEvent(new Event('wishlistChanged'));
+    const isSaved = wishlist.some(item => item._id === quickViewPlace._id);
+    toggleWishlistContext(quickViewPlace);
+    setWishlisted(!isSaved);
+    showTemporaryMessage(!isSaved ? 'Saved to Wishlist!' : 'Removed from Saved Wishlist');
   };
 
   const addToTripPlanner = () => {

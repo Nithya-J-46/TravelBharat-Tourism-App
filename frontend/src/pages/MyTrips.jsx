@@ -13,11 +13,11 @@ import {
   Utensils, Milestone, Lock, Unlock
 } from 'lucide-react';
 import destinationImages from '../assets/destinationImages.json';
+import { useAuth } from '../context/AuthContext';
 
 const MyTrips = ({ initialTab = 'trips' }) => {
   const [activeTab, setActiveTab] = useState(initialTab);
-  const [trips, setTrips] = useState([]);
-  const [wishlist, setWishlist] = useState([]);
+  const { user, wishlist, trips, toggleWishlist, saveTrip, deleteTrip } = useAuth();
   const [collections, setCollections] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState('all');
 
@@ -35,67 +35,24 @@ const MyTrips = ({ initialTab = 'trips' }) => {
 
   const navigate = useNavigate();
 
-  // Load data from Local Storage
+  // Load Collections from Local Storage (Prefixed by user email to keep separate)
   useEffect(() => {
-    loadAllData();
-    window.addEventListener('wishlistChanged', loadAllData);
-    return () => window.removeEventListener('wishlistChanged', loadAllData);
-  }, []);
-
-  const loadAllData = () => {
-    // 1. Load Trips
-    const savedTrips = localStorage.getItem('travelbharat_trips');
-    let tripList = [];
-    if (savedTrips) {
-      try { tripList = JSON.parse(savedTrips); } catch(e){}
-    } else {
-      // Migrate from travelbharat_itineraries if present
-      const oldItins = localStorage.getItem('travelbharat_itineraries');
-      if (oldItins) {
-        try { 
-          const migrated = JSON.parse(oldItins).map(item => ({
-            id: item.id || Date.now() + Math.random(),
-            name: item.title || 'My Trip Plan',
-            destinationName: item.title?.split('-')[0]?.trim() || 'India',
-            stateName: item.title?.split('-')[0]?.trim() || 'India',
-            duration: item.duration || 3,
-            budgetCategory: item.budgetTier || 'Mid-range',
-            travelStyle: item.selectedStyle || 'Sightseeing',
-            travelerType: item.travelerCount === 'Solo' ? 'solo' : item.travelerCount === 'Couple' ? 'couple' : item.travelerCount === 'Family' ? 'family' : 'friends',
-            estimatedCost: item.totalCost || 15000,
-            status: 'Planning',
-            dateCreated: item.date || new Date().toLocaleDateString(),
-            itinerary: []
-          }));
-          tripList = migrated;
-          localStorage.setItem('travelbharat_trips', JSON.stringify(migrated));
-        } catch(e){}
+    if (user) {
+      const key = `travelbharat_collections_${user.email}`;
+      const savedCollections = localStorage.getItem(key);
+      let collectionList = [
+        { id: 'summer', name: 'Summer Vacation 2026' },
+        { id: 'south', name: 'South India Tour' },
+        { id: 'temple', name: 'Temple Pilgrimage' }
+      ];
+      if (savedCollections) {
+        try { collectionList = JSON.parse(savedCollections); } catch (e) {}
+      } else {
+        localStorage.setItem(key, JSON.stringify(collectionList));
       }
+      setCollections(collectionList);
     }
-    setTrips(tripList);
-
-    // 2. Load Wishlist
-    const savedWishlist = localStorage.getItem('travelbharat_wishlist');
-    let wishList = [];
-    if (savedWishlist) {
-      try { wishList = JSON.parse(savedWishlist); } catch(e){}
-    }
-    setWishlist(wishList);
-
-    // 3. Load Collections
-    const savedCollections = localStorage.getItem('travelbharat_collections');
-    let collectionList = [
-      { id: 'summer', name: 'Summer Vacation 2026' },
-      { id: 'south', name: 'South India Tour' },
-      { id: 'temple', name: 'Temple Pilgrimage' }
-    ];
-    if (savedCollections) {
-      try { collectionList = JSON.parse(savedCollections); } catch(e){}
-    } else {
-      localStorage.setItem('travelbharat_collections', JSON.stringify(collectionList));
-    }
-    setCollections(collectionList);
-  };
+  }, [user]);
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -103,51 +60,43 @@ const MyTrips = ({ initialTab = 'trips' }) => {
   };
 
   // Duplicate Trip
-  const handleDuplicateTrip = (trip) => {
+  const handleDuplicateTrip = async (trip) => {
     const duplicated = {
       ...trip,
       id: Date.now() + Math.floor(Math.random() * 1000),
       name: `${trip.name} (Copy)`,
       dateCreated: new Date().toLocaleDateString()
     };
-    const updated = [duplicated, ...trips];
-    setTrips(updated);
-    localStorage.setItem('travelbharat_trips', JSON.stringify(updated));
+    await saveTrip(duplicated);
     showToast('Trip plan duplicated successfully!');
   };
 
   // Delete Trip
-  const handleDeleteTrip = (tripId) => {
+  const handleDeleteTrip = async (tripId) => {
     if (window.confirm('Are you sure you want to delete this trip plan?')) {
-      const updated = trips.filter(t => t.id !== tripId);
-      setTrips(updated);
-      localStorage.setItem('travelbharat_trips', JSON.stringify(updated));
+      await deleteTrip(tripId);
       showToast('Trip plan deleted successfully.');
     }
   };
 
   // Edit Trip Save
-  const handleSaveEdit = () => {
+  const handleSaveEdit = async () => {
     if (!editName.trim()) return;
-    const updated = trips.map(t => {
-      if (t.id === editingTrip.id) {
-        return {
-          ...t,
-          name: editName,
-          status: editStatus
-        };
-      }
-      return t;
-    });
-    setTrips(updated);
-    localStorage.setItem('travelbharat_trips', JSON.stringify(updated));
-    setEditingTrip(null);
-    showToast('Trip updated successfully.');
+    const tripToUpdate = trips.find(t => t.id === editingTrip.id);
+    if (tripToUpdate) {
+      const updated = {
+        ...tripToUpdate,
+        name: editName,
+        status: editStatus
+      };
+      await saveTrip(updated);
+      setEditingTrip(null);
+      showToast('Trip updated successfully.');
+    }
   };
 
   // Duplicate Wishlist to Planner
   const handleMoveToPlanner = (place) => {
-    // Redirect to state page with parameters or default plan
     const slug = place.slug || '';
     if (slug) {
       navigate(`/destination/${slug}`);
@@ -157,39 +106,37 @@ const MyTrips = ({ initialTab = 'trips' }) => {
   };
 
   // Remove from Wishlist
-  const handleRemoveFromWishlist = (placeId) => {
-    const updated = wishlist.filter(item => item._id !== placeId);
-    setWishlist(updated);
-    localStorage.setItem('travelbharat_wishlist', JSON.stringify(updated));
-    showToast('Removed from Wishlist.');
+  const handleRemoveFromWishlist = async (placeId) => {
+    const place = wishlist.find(item => item._id === placeId);
+    if (place) {
+      await toggleWishlist(place);
+      showToast('Removed from Wishlist.');
+    }
   };
 
   // Create Collection
   const handleCreateCollection = () => {
-    if (!newCollectionName.trim()) return;
+    if (!newCollectionName.trim() || !user) return;
     const newColl = {
       id: 'coll-' + Date.now(),
       name: newCollectionName.trim()
     };
     const updated = [...collections, newColl];
     setCollections(updated);
-    localStorage.setItem('travelbharat_collections', JSON.stringify(updated));
+    localStorage.setItem(`travelbharat_collections_${user.email}`, JSON.stringify(updated));
     setNewCollectionName('');
     setCreatingCollection(false);
     showToast(`Collection "${newColl.name}" created!`);
   };
 
   // Organize Saved Destination into Collection
-  const handleAssignCollection = (tripId, collectionId) => {
-    const updated = trips.map(t => {
-      if (t.id === tripId) {
-        return { ...t, collectionId: collectionId === 'none' ? null : collectionId };
-      }
-      return t;
-    });
-    setTrips(updated);
-    localStorage.setItem('travelbharat_trips', JSON.stringify(updated));
-    showToast('Trip collection updated.');
+  const handleAssignCollection = async (tripId, collectionId) => {
+    const tripToUpdate = trips.find(t => t.id === tripId);
+    if (tripToUpdate) {
+      const updated = { ...tripToUpdate, collectionId: collectionId === 'none' ? null : collectionId };
+      await saveTrip(updated);
+      showToast('Trip collection updated.');
+    }
   };
 
   // Statistics calculation

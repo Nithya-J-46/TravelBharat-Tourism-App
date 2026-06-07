@@ -17,6 +17,7 @@ import {
 import PlaceCard from '../components/PlaceCard';
 import Breadcrumb from '../components/Breadcrumb';
 import SEO from '../components/SEO';
+import { useAuth } from '../context/AuthContext';
 import { clearImageRegistry } from '../components/SafeImage';
 import WeatherWidget from '../components/WeatherWidget';
 
@@ -104,6 +105,7 @@ const AnimatedCounter = ({ value, duration = 600 }) => {
 };
 
 const StatePage = () => {
+  const { user, saveTrip, saveItinerary } = useAuth();
   const { isDark } = useTheme();
   const { stateSlug } = useParams();
   const [stateInfo, setStateInfo] = useState(null);
@@ -505,7 +507,7 @@ const StatePage = () => {
   };
 
   // Save Plan
-  const savePlan = () => {
+  const savePlan = async () => {
     const newTrip = {
       id: Date.now() + Math.floor(Math.random() * 1000),
       name: `${stateInfo.name} - ${duration} Days Plan`,
@@ -522,13 +524,14 @@ const StatePage = () => {
       routeInfo: routePoints
     };
     
-    // Save to travelbharat_trips
-    const savedTrips = localStorage.getItem('travelbharat_trips');
-    let tripList = [];
-    if (savedTrips) {
-      try { tripList = JSON.parse(savedTrips); } catch(e){}
+    if (!user) {
+      if (window.confirm("Please login or create an account to save your trips. Would you like to go to the login page now?")) {
+        window.location.href = "/login";
+      }
+      return;
     }
-    localStorage.setItem('travelbharat_trips', JSON.stringify([newTrip, ...tripList]));
+
+    await saveTrip(newTrip);
 
     // Legacy compatibility sync
     const newPlan = {
@@ -541,12 +544,7 @@ const StatePage = () => {
       totalCost: costs.total,
       date: newTrip.dateCreated
     };
-    const saved = localStorage.getItem('travelbharat_itineraries');
-    let list = [];
-    if (saved) {
-      try { list = JSON.parse(saved); } catch(e){}
-    }
-    localStorage.setItem('travelbharat_itineraries', JSON.stringify([newPlan, ...list]));
+    await saveItinerary(newPlan);
 
     setSaveStatus('✓ Trip Saved Successfully');
     setTimeout(() => setSaveStatus(''), 3000);

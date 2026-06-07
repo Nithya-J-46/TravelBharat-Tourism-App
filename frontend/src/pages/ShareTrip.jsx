@@ -9,6 +9,7 @@ import {
   Eye, FileText, Check, AlertCircle, Share2, Plus, ArrowLeft, Star
 } from 'lucide-react';
 import destinationImages from '../assets/destinationImages.json';
+import { useAuth } from '../context/AuthContext';
 
 // Leaflet marker configuration fix
 delete L.Icon.Default.prototype._getIconUrl;
@@ -19,6 +20,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const ShareTrip = () => {
+  const { user, saveTrip } = useAuth();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [trip, setTrip] = useState(null);
@@ -82,14 +84,15 @@ const ShareTrip = () => {
     return 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80'; // Taj Mahal default
   };
 
-  // Save shared trip to local trips
-  const handleSaveToDashboard = () => {
+  // Save shared trip to user trips
+  const handleSaveToDashboard = async () => {
     if (!trip) return;
     
-    const savedTrips = localStorage.getItem('travelbharat_trips');
-    let tripList = [];
-    if (savedTrips) {
-      try { tripList = JSON.parse(savedTrips); } catch(e){}
+    if (!user) {
+      if (window.confirm("Please login or create an account to save trips to your dashboard. Would you like to go to the login page now?")) {
+        window.location.href = "/login";
+      }
+      return;
     }
     
     // Add unique ID to prevent overlap
@@ -99,7 +102,7 @@ const ShareTrip = () => {
       name: `${trip.name} (Shared)`
     };
 
-    localStorage.setItem('travelbharat_trips', JSON.stringify([newTrip, ...tripList]));
+    await saveTrip(newTrip);
     setSaveSuccess(true);
     showToast('Trip saved to your Dashboard!');
   };

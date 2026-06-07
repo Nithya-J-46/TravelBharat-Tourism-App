@@ -7,6 +7,7 @@ const fs = require('fs');
 
 // Routes imports
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 const stateRoutes = require('./routes/states');
 const cityRoutes = require('./routes/cities');
 const categoryRoutes = require('./routes/categories');
@@ -38,6 +39,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/travelbha
 
 // Routes Configuration
 app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
 app.use('/api/states', stateRoutes);
 app.use('/api/cities', cityRoutes);
 app.use('/api/categories', categoryRoutes);

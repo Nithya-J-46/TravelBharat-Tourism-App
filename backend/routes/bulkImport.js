@@ -4,10 +4,10 @@ const State = require('../models/State');
 const City = require('../models/City');
 const Category = require('../models/Category');
 const Place = require('../models/Place');
-const { verifyToken } = require('../middleware/auth');
+const { verifyToken, isAdmin } = require('../middleware/auth');
 
 // POST bulk import places (Admin only)
-router.post('/', verifyToken, async (req, res) => {
+router.post('/', verifyToken, isAdmin, async (req, res) => {
   const items = req.body;
   if (!Array.isArray(items)) {
     return res.status(400).json({ message: 'Input must be a JSON array of places.' });

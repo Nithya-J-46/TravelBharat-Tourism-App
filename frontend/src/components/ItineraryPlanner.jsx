@@ -11,6 +11,7 @@ import {
   Calculator, Clock, Award, HelpCircle, ChevronDown, ChevronUp, Coffee, Loader2
 } from 'lucide-react';
 import TripBudgetCalculator from './TripBudgetCalculator';
+import { useAuth } from '../context/AuthContext';
 import WeatherWidget from './WeatherWidget';
 
 // Fix Leaflet default marker icons issue in React/Vite
@@ -105,6 +106,7 @@ const TRIP_TYPES = [
 ];
 
 const ItineraryPlanner = ({ places = [], title = "India", defaultDuration = 3 }) => {
+  const { user, itineraries, saveItinerary: saveItineraryContext, saveTrip } = useAuth();
   const { isDark } = useTheme();
   const [duration, setDuration] = useState(defaultDuration);
   const [tripType, setTripType] = useState('couple');
@@ -129,17 +131,12 @@ const ItineraryPlanner = ({ places = [], title = "India", defaultDuration = 3 })
     return () => clearTimeout(timer);
   }, [duration, tripType, budgetTier, activeTab]);
 
-  // Load saved itineraries
+  // Load saved itineraries from AuthContext
   useEffect(() => {
-    const savedList = localStorage.getItem('travelbharat_itineraries');
-    if (savedList) {
-      try {
-        setMyItineraries(JSON.parse(savedList));
-      } catch (err) {
-        console.error(err);
-      }
+    if (itineraries) {
+      setMyItineraries(itineraries);
     }
-  }, []);
+  }, [itineraries]);
 
   if (!places || places.length === 0) {
     return (
@@ -363,7 +360,7 @@ const ItineraryPlanner = ({ places = [], title = "India", defaultDuration = 3 })
   const totalCost = accommodationCost + foodCost + transportCost + activitiesCost + miscCost;
 
   // Save current itinerary
-  const saveItinerary = () => {
+  const handleSaveItinerary = async () => {
     const stateName = places[0]?.state?.name || places[0]?.state || title;
     const newTrip = {
       id: Date.now() + Math.floor(Math.random() * 1000),
@@ -381,13 +378,14 @@ const ItineraryPlanner = ({ places = [], title = "India", defaultDuration = 3 })
       routeInfo: days.map(d => d.coordinates)
     };
 
-    // Save to travelbharat_trips
-    const savedTrips = localStorage.getItem('travelbharat_trips');
-    let tripList = [];
-    if (savedTrips) {
-      try { tripList = JSON.parse(savedTrips); } catch(e){}
+    if (!user) {
+      if (window.confirm("Please login or create an account to save your itineraries. Would you like to go to the login page now?")) {
+        window.location.href = "/login";
+      }
+      return;
     }
-    localStorage.setItem('travelbharat_trips', JSON.stringify([newTrip, ...tripList]));
+
+    await saveTrip(newTrip);
 
     // Legacy sync
     const newItin = {
@@ -402,9 +400,7 @@ const ItineraryPlanner = ({ places = [], title = "India", defaultDuration = 3 })
       totalCost,
       date: newTrip.dateCreated
     };
-    const updated = [newItin, ...myItineraries.slice(0, 4)];
-    setMyItineraries(updated);
-    localStorage.setItem('travelbharat_itineraries', JSON.stringify(updated));
+    await saveItineraryContext(newItin);
     
     setSaved(true);
     setSuccessToast('✓ Trip Saved Successfully');
@@ -482,7 +478,7 @@ const ItineraryPlanner = ({ places = [], title = "India", defaultDuration = 3 })
 
         <div className="flex gap-2">
           <button 
-            onClick={saveItinerary}
+            onClick={handleSaveItinerary}
             className="flex items-center justify-center gap-1.5 px-4 py-2.5 bg-slate-150 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-850 border border-slate-205 dark:border-slate-800 text-slate-700 dark:text-slate-350 hover:text-slate-900 dark:hover:text-white rounded-xl text-xs font-bold transition shadow-md cursor-pointer select-none"
           >
             {saved ? (

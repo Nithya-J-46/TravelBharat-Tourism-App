@@ -183,11 +183,13 @@ const seed = async () => {
     // Seed Default Admin
     const hashedPassword = await bcrypt.hash('adminpassword', 10);
     const adminUser = new User({
-      username: 'admin',
-      password: hashedPassword
+      name: 'TravelBharat Administrator',
+      email: 'admin@travelbharat.com',
+      password: hashedPassword,
+      role: 'admin'
     });
     await adminUser.save();
-    console.log('Seeded default admin user.');
+    console.log('Seeded default admin user (email: admin@travelbharat.com, role: admin).');
 
     console.log(`Seeding completed successfully! Total States/UTs: ${statesData.length}, Total Places: ${totalPlacesCount}.`);
     mongoose.connection.close();
