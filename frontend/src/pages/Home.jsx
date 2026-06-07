@@ -9,6 +9,34 @@ import LocationDetector from '../components/LocationDetector';
 import { clearImageRegistry } from '../components/SafeImage';
 import ErrorBoundary from '../components/ErrorBoundary';
 
+const CarouselRow = ({ title, subtitle, items, icon }) => {
+  if (items.length === 0) return null;
+  return (
+    <div className="space-y-4 py-8 border-b border-slate-100 last:border-0">
+      <div className="flex justify-between items-end px-1">
+        <div>
+          <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+            {icon}
+            {title}
+          </h3>
+          <p className="text-xs text-slate-400 font-medium mt-1">{subtitle}</p>
+        </div>
+        <Link to="/explore" className="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 group">
+          See All <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
+        </Link>
+      </div>
+      
+      <div className="flex gap-6 overflow-x-auto pb-4 pt-1 no-scrollbar snap-x scroll-smooth">
+        {items.map(item => (
+          <div key={item._id} className="w-[280px] sm:w-[300px] flex-shrink-0 snap-start">
+            <PlaceCard place={item} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchCategory, setSearchCategory] = useState('All');
@@ -151,33 +179,7 @@ const Home = () => {
     }
   };
 
-  const CarouselRow = ({ title, subtitle, items, icon }) => {
-    if (items.length === 0) return null;
-    return (
-      <div className="space-y-4 py-8 border-b border-slate-100 last:border-0">
-        <div className="flex justify-between items-end px-1">
-          <div>
-            <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-              {icon}
-              {title}
-            </h3>
-            <p className="text-xs text-slate-400 font-medium mt-1">{subtitle}</p>
-          </div>
-          <Link to="/explore" className="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 group">
-            See All <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-        </div>
-        
-        <div className="flex gap-6 overflow-x-auto pb-4 pt-1 no-scrollbar snap-x scroll-smooth">
-          {items.map(item => (
-            <div key={item._id} className="w-[280px] sm:w-[300px] flex-shrink-0 snap-start">
-              <PlaceCard place={item} />
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
+
 
   return (
     <div className="relative">

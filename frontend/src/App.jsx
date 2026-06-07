@@ -11,7 +11,6 @@ const Explore = lazy(() => import('./pages/Explore'));
 const StatePage = lazy(() => import('./pages/StatePage'));
 const PlaceDetail = lazy(() => import('./pages/PlaceDetail'));
 const MyTrips = lazy(() => import('./pages/MyTrips'));
-const WishlistPage = lazy(() => import('./pages/WishlistPage'));
 const ShareTrip = lazy(() => import('./pages/ShareTrip'));
 const TourismMap = lazy(() => import('./pages/TourismMap'));
 const ForgotPassword = lazy(() => import('./pages/ForgotPassword')); // New Forgot Password Page
