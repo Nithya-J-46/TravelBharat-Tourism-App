@@ -150,8 +150,9 @@ const Register = () => {
                 <input
                   type="text"
                   required
-                  className="w-full pl-11 pr-3.5 py-2.5 bg-white/50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
-                  placeholder="Nithya Subhashini"
+                  autoComplete="off"
+                  className="w-full pl-11 pr-3.5 py-2.5 bg-white/50 dark:bg-slate-955/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
+                  placeholder="Enter your full name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -170,8 +171,9 @@ const Register = () => {
                 <input
                   type="email"
                   required
-                  className="w-full pl-11 pr-3.5 py-2.5 bg-white/50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
-                  placeholder="nithya@example.com"
+                  autoComplete="off"
+                  className="w-full pl-11 pr-3.5 py-2.5 bg-white/50 dark:bg-slate-955/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
+                  placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -189,8 +191,9 @@ const Register = () => {
                 </div>
                 <input
                   type="tel"
-                  className="w-full pl-11 pr-3.5 py-2.5 bg-white/50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
-                  placeholder="+91 9876543210"
+                  autoComplete="off"
+                  className="w-full pl-11 pr-3.5 py-2.5 bg-white/50 dark:bg-slate-955/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
+                  placeholder="Enter mobile number (optional)"
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value)}
                 />
@@ -209,8 +212,9 @@ const Register = () => {
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
-                  className="w-full pl-11 pr-10 py-2.5 bg-white/50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
-                  placeholder="••••••••"
+                  autoComplete="new-password"
+                  className="w-full pl-11 pr-10 py-2.5 bg-white/50 dark:bg-slate-955/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
+                  placeholder="Create a strong password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -248,8 +252,9 @@ const Register = () => {
                 <input
                   type={showConfirmPassword ? 'text' : 'password'}
                   required
-                  className="w-full pl-11 pr-10 py-2.5 bg-white/50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
-                  placeholder="••••••••"
+                  autoComplete="new-password"
+                  className="w-full pl-11 pr-10 py-2.5 bg-white/50 dark:bg-slate-955/40 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 text-slate-800 dark:text-slate-205 transition font-medium"
+                  placeholder="Confirm your password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
