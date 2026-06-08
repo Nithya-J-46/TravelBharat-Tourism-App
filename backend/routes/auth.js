@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const { verifyToken, JWT_SECRET } = require('../middleware/auth');
 const rateLimiter = require('../middleware/rateLimiter');
+const { sendWelcomeEmail, sendLoginAlertEmail, sendPasswordResetEmail } = require('../services/emailService');
 
 // Rate limiter for authentication routes: max 15 requests per 15 minutes
 const authLimiter = rateLimiter(15, 15 * 60 * 1000);
@@ -53,6 +54,11 @@ router.post('/register', authLimiter, async (req, res) => {
     });
 
     await newUser.save();
+
+    // Send welcome email asynchronously
+    sendWelcomeEmail(newUser.email, newUser.name).catch(err => {
+      console.error('Failed to send welcome email:', err);
+    });
 
     const token = jwt.sign(
       { id: newUser._id, email: newUser.email, role: newUser.role },
@@ -112,6 +118,13 @@ router.post('/login', authLimiter, async (req, res) => {
       return res.status(401).json({ message: 'Invalid email/username or password' });
     }
 
+    // Send login notification email asynchronously
+    const userAgent = req.headers['user-agent'] || 'Unknown Browser';
+    const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'Unknown IP';
+    sendLoginAlertEmail(user.email, user.name || 'Administrator', userAgent, ipAddress).catch(err => {
+      console.error('Failed to send login notification email:', err);
+    });
+
     const token = jwt.sign(
       { id: user._id, email: user.email, role: user.role },
       JWT_SECRET,
@@ -150,8 +163,13 @@ router.post('/forgot-password', async (req, res) => {
     // Generate 6-digit OTP
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     user.otp = otp;
-    user.otpExpires = Date.now() + 10 * 60 * 1000; // 10 minutes expiry
+    user.otpExpires = Date.now() + 15 * 60 * 1000; // 15 minutes expiry
     await user.save();
+
+    // Send password reset email asynchronously
+    sendPasswordResetEmail(user.email, user.name || 'User', otp).catch(err => {
+      console.error('Failed to send password reset email:', err);
+    });
 
     console.log(`\n========================================\n[PASSWORD RESET OTP] \nUser: ${email}\nOTP: ${otp}\n========================================\n`);
 

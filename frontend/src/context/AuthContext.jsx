@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
 const AuthContext = createContext();
 
@@ -15,8 +16,6 @@ export const AuthProvider = ({ children }) => {
   const [trips, setTrips] = useState([]);
   const [itineraries, setItineraries] = useState([]);
   const [preferences, setPreferences] = useState({ travel: [], budget: 'Medium' });
-
-  const API_URL = `${window.API_BASE_URL}/api`;
 
   // Helper to get auth headers
   const getAuthHeaders = (tempToken = null) => {

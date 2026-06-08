@@ -1,4 +1,5 @@
-window.API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import { API_BASE_URL } from './config/api';
+window.API_BASE_URL = API_BASE_URL;
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
